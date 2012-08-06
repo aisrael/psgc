@@ -17,6 +17,14 @@ describe PSGC::Import::Base do
   it 'responds to src' do
     should respond_to :src
   end
+  
+  it 'returns Base.uri + src as full_source' do
+    PSGC::Import::Base.uri = 'http://localhost'
+    import = PSGC::Import::Base.new
+    import.src = 'test.html'
+    import.full_source.should eq(URI('http://localhost/test.html'))
+  end
+
 end
 
 describe PSGC::Import::ListReg do

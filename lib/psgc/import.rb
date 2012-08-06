@@ -5,7 +5,15 @@ module PSGC
     class Base < Struct.new :src
       @uri = URI('http://www.nscb.gov.ph/activestats/psgc/')
       class << self
-        attr_accessor :uri
+        attr_reader :uri
+        def uri=(uri)
+          @uri = uri.is_a?(URI) ? uri : URI(uri)
+        end
+      end
+      
+      # Return the Base.uri + src
+      def full_source
+        URI.join(Base.uri, src) 
       end
     end
     
