@@ -5,6 +5,6 @@ module PSGC
       def initialize
         super 'listreg.asp'
       end
-    end    
+    end
   end
 end
