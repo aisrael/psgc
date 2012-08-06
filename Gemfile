@@ -15,4 +15,9 @@ group :development do
   gem 'rcov', '>= 0', :platforms => :mri_18
   # for Ruby 1.9, use simplecov
   gem 'simplecov', :platforms => :mri_19
+
+  # for scraping
+  gem 'thor', '~> 0.15'
+  gem 'nokogiri', '~> 1.5'
 end
+
