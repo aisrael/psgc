@@ -5,7 +5,9 @@ require 'rake/tasklib'
 
 module PSGC
   class RakeTask < ::Rake::TaskLib
-    WEB_DIR = File.expand_path(File.join(__FILE__, '..', '..', '..', 'web', 'www.ncsb.gov.ph'))
+    NCSB_BASE_URI = URI('http://www.nscb.gov.ph/activestats/psgc/')
+    
+    WEB_DIR = File.expand_path(File.join(__FILE__, '..', '..', '..', 'web', NCSB_BASE_URI.host))
     
     def initialize(*args)
       yield self if block_given?
@@ -25,10 +27,17 @@ module PSGC
         end
       end
     end
-    
-    # Fetch 
-    def fetch
-      puts "WEB_DIR: #{WEB_DIR}"
+   
+    LISTREG_ASP = 'listreg.asp'
+     
+    # Fetch
+    def fetch      
+      src = NCSB_BASE_URI + LISTREG_ASP      
+      listreg = File.join(WEB_DIR, File.basename(src.path)) 
+      
+      cmd = "curl #{src} > #{out}"
+      puts cmd
+      system(cmd)
     end
     
     def parse
