@@ -1,5 +1,4 @@
 module PSGC
-  class Region
-    attr_accessor :id, :name
+  class Region < Struct.new :id, :name
   end
 end
