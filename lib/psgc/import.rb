@@ -1,6 +1,5 @@
 module PSGC
   module Import
-
     # Base class for all other importers
     class Base < Struct.new :src
       @uri = URI('http://www.nscb.gov.ph/activestats/psgc/')
@@ -17,6 +16,5 @@ module PSGC
       end
     end
     
-    autoload :ListReg, 'psgc/import/list_reg'
   end
 end
