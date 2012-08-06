@@ -26,6 +26,7 @@ end
 Jeweler::RubygemsDotOrgTasks.new
 
 require 'rspec/core/rake_task'
+desc 'Run RSpec tests'
 RSpec::Core::RakeTask.new(:test) do |test|
   test.verbose = true
 end
@@ -53,14 +54,4 @@ end
 
 require 'psgc/rake_task'
 psgc = PSGC::RakeTask.new do |t|
-end
-
-namespace :psgc do
-  task :fetch do
-    psgc.fetch
-  end
-  
-  task :parse do
-    psgc.parse
-  end
 end
