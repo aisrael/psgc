@@ -9,6 +9,10 @@ rescue Bundler::BundlerError => e
   exit e.status_code
 end
 
+RSpec.configure do |config|
+    config.pattern = "**/*_spec.rb"
+end
+
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
