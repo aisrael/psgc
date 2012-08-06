@@ -31,7 +31,7 @@ describe PSGC::Import::Base do
   
   describe '.dir' do
     subject { PSGC::Import::Base.dir }
-    it { should eq(File.expand_path(File.join(File.dirname(__FILE__), '..', '..', '..', 'web'))) }
+    it { should eq(File.expand_path(File.join(File.dirname(__FILE__), '..', '..', '..', 'web', 'www.nscb.gov.ph'))) }
   end
 
   it 'has attribute :src' do

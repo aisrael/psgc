@@ -3,7 +3,7 @@ module PSGC
     # Base class for all other importers
     class Base < Struct.new :src
       @uri = URI('http://www.nscb.gov.ph/activestats/psgc/')
-      @dir = File.expand_path(File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'web')))
+      @dir = File.expand_path(File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'web', @uri.host)))
       
       class << self
         attr_reader :uri, :dir
