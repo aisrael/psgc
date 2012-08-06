@@ -17,18 +17,16 @@ Jeweler::Tasks.new do |gem|
   gem.name = "psgc"
   gem.homepage = "http://github.com/AlistairIsrael/psgc"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Philippine Standard Geographic Code}
+  gem.description = %Q{A Ruby gem that provides PSGC (Philippine Standard Geographic Code) data.}
   gem.email = "aisrel@gmail.com"
   gem.authors = ["Alistair A. Israel"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
 
-require 'rake/testtask'
-Rake::TestTask.new(:test) do |test|
-  test.libs << 'lib' << 'test'
-  test.pattern = 'test/**/test_*.rb'
+require 'rspec/core/rake_task'
+RSpec::Core::RakeTask.new(:test) do |test|
   test.verbose = true
 end
 
