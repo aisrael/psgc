@@ -6,7 +6,8 @@ module PSGC
       @dir = File.expand_path(File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'web', @uri.host)))
       
       class << self
-        attr_reader :uri, :dir
+        attr_accessor :dir
+        attr_reader :uri
         def uri=(uri)
           @uri = uri.is_a?(URI) ? uri : URI(uri)
         end

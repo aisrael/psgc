@@ -39,12 +39,23 @@ describe PSGC::Import::Base do
   end
   
   describe '#full_source' do
-    let(:base) { PSGC::Import::Base.new }
+    let(:task) { PSGC::Import::Base.new }
     it 'returns Base.uri + src' do
       PSGC::Import::Base.uri = 'http://localhost'
-      base.src = 'test.html'
-      base.full_source.should eq(URI('http://localhost/test.html'))
+      task.src = 'test.html'
+      task.full_source.should eq(URI('http://localhost/test.html'))
     end
   end
 
+  describe '#fetch' do    
+    let(:task) { PSGC::Import::Base.new }
+    it 'should execute curl' do
+      PSGC::Import::Base.dir = 'tmp'
+      PSGC::Import::Base.uri = 'http://localhost'
+      task.src = 'test.html'
+      task.should_receive(:puts).with("curl http://localhost/test.html > tmp/test.html")
+      task.should_receive(:system).with("curl http://localhost/test.html > tmp/test.html")
+      task.fetch
+    end
+  end
 end
