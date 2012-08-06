@@ -16,6 +16,13 @@ module PSGC
       def full_source
         URI.join(Base.uri, src)
       end
+      
+      # Use `curl` to get the desired page
+      def fetch
+        cmd = "curl #{full_source} > #{File.join(Base.dir, src)}"
+        puts cmd
+        system(cmd)
+      end
     end
     
   end

@@ -52,6 +52,7 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
 
+require 'psgc'
 require 'psgc/rake_task'
 psgc = PSGC::RakeTask.new do |t|
 end
