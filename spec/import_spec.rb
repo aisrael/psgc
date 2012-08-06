@@ -13,18 +13,18 @@ end
 
 describe PSGC::Import::Base do
   describe '.uri' do
-
+    subject {PSGC::Import::Base.uri}
     it 'is a URI' do 
-      PSGC::Import::Base.uri.should be_a_kind_of URI 
+      should be_a_kind_of URI 
     end    
 
     it "has a default value set (#{PSGC::Import::Base.uri})" do      
-      PSGC::Import::Base.uri.should_not be_nil
+      should_not be_nil
     end
 
     it 'accepts an ordinary string, but converts it to a URI' do
       PSGC::Import::Base.uri = 'http://localhost'
-      PSGC::Import::Base.uri.should be_a_kind_of URI
+      should be_a_kind_of URI
     end
 
   end
