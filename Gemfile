@@ -8,7 +8,11 @@ source "http://rubygems.org"
 group :development do
   gem "shoulda", ">= 0"
   gem "rdoc", "~> 3.12"
-  gem "bundler", "~> 1.0.0"
+  gem "bundler", "~> 1.0"
   gem "jeweler", "~> 1.8.4"
-  gem "rcov", ">= 0"
+
+  # rcov only works with Ruby 1.8
+  gem 'rcov', '>= 0', :platforms => :mri_18
+  # for Ruby 1.9, use simplecov
+  gem 'simplecov', :platforms => :mri_19
 end
