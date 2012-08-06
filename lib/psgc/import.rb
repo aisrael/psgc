@@ -13,7 +13,7 @@ module PSGC
       
       # Return the Base.uri + src
       def full_source
-        URI.join(Base.uri, src) 
+        URI.join(Base.uri, src)
       end
     end
     

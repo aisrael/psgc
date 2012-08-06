@@ -29,15 +29,18 @@ describe PSGC::Import::Base do
 
   end
 
-  it 'responds to src' do
-    should respond_to :src
+  it 'has attribute :src' do
+    should respond_to :src    
   end
   
-  it 'returns Base.uri + src as full_source' do
-    PSGC::Import::Base.uri = 'http://localhost'
-    import = PSGC::Import::Base.new
-    import.src = 'test.html'
-    import.full_source.should eq(URI('http://localhost/test.html'))
+  describe '#full_source' do
+    before(:each) do
+      PSGC::Import::Base.uri = 'http://localhost'
+    end
+    it 'returns Base.uri + src' do
+      subject.src = 'test.html'
+      subject.full_source.should eq(URI('http://localhost/test.html'))
+    end
   end
 
 end
