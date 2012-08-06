@@ -34,12 +34,11 @@ describe PSGC::Import::Base do
   end
   
   describe '#full_source' do
-    before(:each) do
-      PSGC::Import::Base.uri = 'http://localhost'
-    end
+    let(:base) { PSGC::Import::Base.new }
     it 'returns Base.uri + src' do
-      subject.src = 'test.html'
-      subject.full_source.should eq(URI('http://localhost/test.html'))
+      PSGC::Import::Base.uri = 'http://localhost'
+      base.src = 'test.html'
+      base.full_source.should eq(URI('http://localhost/test.html'))
     end
   end
 
