@@ -17,11 +17,6 @@ module PSGC
       end
     end
     
-    # Import Region List
-    class ListReg < Base
-      def initialize
-        super 'listreg.asp'
-      end
-    end    
+    autoload :ListReg, 'psgc/import/list_reg'
   end
 end
