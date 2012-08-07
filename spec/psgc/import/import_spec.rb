@@ -28,7 +28,6 @@ describe PSGC::Import::Base do
     end
   end
   
-  
   describe '.dir' do
     subject { PSGC::Import::Base.dir }
     it { should eq(File.expand_path(File.join(File.dirname(__FILE__), '..', '..', '..', 'web', 'www.nscb.gov.ph'))) }
@@ -38,8 +37,12 @@ describe PSGC::Import::Base do
     should respond_to :src    
   end
   
+  it 'has attribute :expected_md5' do
+    should respond_to :expected_md5
+  end
+  
+  let(:task) { PSGC::Import::Base.new }
   describe '#full_source' do
-    let(:task) { PSGC::Import::Base.new }
     it 'returns Base.uri + src' do
       PSGC::Import::Base.uri = 'http://localhost'
       task.src = 'test.html'
@@ -48,7 +51,6 @@ describe PSGC::Import::Base do
   end
 
   describe '#fetch' do    
-    let(:task) { PSGC::Import::Base.new }
     it 'should execute curl' do
       PSGC::Import::Base.dir = 'tmp'
       PSGC::Import::Base.uri = 'http://localhost'
@@ -58,8 +60,13 @@ describe PSGC::Import::Base do
     end
   end
   
+  describe '#parse' do
+    it 'should do something' do
+      task.parse
+    end
+  end
+  
   describe '#cmd' do
-    let(:task) { PSGC::Import::Base.new }
     it 'is equivalent to puts(s) then system(s)' do
       
       s = 'echo Hello World'

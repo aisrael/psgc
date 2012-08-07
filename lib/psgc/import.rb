@@ -1,7 +1,7 @@
 module PSGC
   module Import
     # Base class for all other importers
-    class Base < Struct.new :src
+    class Base < Struct.new :src, :expected_md5
       @uri = URI('http://www.nscb.gov.ph/activestats/psgc/')
       @dir = File.expand_path(File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'web', @uri.host)))
       
@@ -21,6 +21,10 @@ module PSGC
       # Use `curl` to get the desired page
       def fetch
         cmd("curl #{full_source} > #{File.join(Base.dir, src)}")
+      end
+      
+      # noop
+      def parse
       end
       
       protected
