@@ -50,13 +50,19 @@ describe PSGC::Import::Base do
     end
   end
 
-  describe '#fetch' do    
-    it 'should execute curl' do
+  describe '#fetch' do
+    before(:all) do
       PSGC::Import::Base.dir = 'tmp'
       PSGC::Import::Base.uri = 'http://localhost'
       task.src = 'test.html'
+    end
+    it 'should execute curl' do
       task.should_receive(:cmd).with('curl http://localhost/test.html > tmp/test.html')
       task.fetch
+    end
+
+    it 'should verify expected_md5' do
+      
     end
   end
   
