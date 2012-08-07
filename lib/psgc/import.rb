@@ -23,7 +23,11 @@ module PSGC
       # Use `curl` to get the desired page
       def fetch
         target = File.join(Base.dir, src)
-        cmd("curl #{full_source} > #{target}") unless already_there(target)
+        if already_there(target)
+          puts "#{src} already exists and matches expected hash, skipping"
+        else
+          cmd("curl #{full_source} > #{target}") 
+        end
       end
       
       # noop

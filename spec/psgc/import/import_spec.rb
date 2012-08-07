@@ -68,6 +68,7 @@ describe PSGC::Import::Base do
 
     it 'should not curl if file exists' do
       task.should_receive(:already_there).with('/tmp/test.html').and_return(true)
+      task.should_receive(:puts).with('test.html already exists and matches expected hash, skipping')      
       task.should_not_receive(:cmd)
       task.fetch
     end
@@ -87,12 +88,13 @@ describe PSGC::Import::Base do
     end
 
     it 'should check if file exists' do
+      task.expected_md5 = '55349b2c7e24a01cf5a37673ada5b0f1'
+
       target = '/tmp/test.html'
       digest = mock('digest')
       File.should_receive(:exists?).with(target).and_return(true)
       Digest::MD5.should_receive(:file).with(target).and_return(digest)
       digest.should_receive(:hexdigest).and_return('55349b2c7e24a01cf5a37673ada5b0f1')
-      task.expected_md5 = '55349b2c7e24a01cf5a37673ada5b0f1'
       task.send(:already_there, target).should be_true
     end
   end
