@@ -20,9 +20,18 @@ module PSGC
       
       # Use `curl` to get the desired page
       def fetch
-        cmd = "curl #{full_source} > #{File.join(Base.dir, src)}"
+        cmd("curl #{full_source} > #{File.join(Base.dir, src)}")
+      end
+      
+      protected
+      
+      # Shortcut for:
+      #
+      #     puts(cmd); system(cmd)
+      #
+      def cmd(cmd)
         puts cmd
-        system(cmd)
+        system cmd
       end
     end
     

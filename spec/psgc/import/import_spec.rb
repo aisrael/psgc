@@ -53,9 +53,20 @@ describe PSGC::Import::Base do
       PSGC::Import::Base.dir = 'tmp'
       PSGC::Import::Base.uri = 'http://localhost'
       task.src = 'test.html'
-      task.should_receive(:puts).with("curl http://localhost/test.html > tmp/test.html")
-      task.should_receive(:system).with("curl http://localhost/test.html > tmp/test.html")
+      task.should_receive(:cmd).with('curl http://localhost/test.html > tmp/test.html')
       task.fetch
+    end
+  end
+  
+  describe '#cmd' do
+    let(:task) { PSGC::Import::Base.new }
+    it 'is equivalent to puts(s) then system(s)' do
+      
+      s = 'echo Hello World'
+      task.should_receive(:puts).with(s)
+      task.should_receive(:system).with(s)
+      # bypass protected visibility
+      task.send :cmd, s
     end
   end
 end
