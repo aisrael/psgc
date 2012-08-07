@@ -20,7 +20,9 @@ module PSGC
       
       # Use `curl` to get the desired page
       def fetch
-        cmd("curl #{full_source} > #{File.join(Base.dir, src)}")
+        target = File.join(Base.dir, src)
+        return if File.exist?(target)
+        cmd("curl #{full_source} > #{target}")
       end
       
       # noop

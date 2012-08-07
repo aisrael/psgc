@@ -52,12 +52,14 @@ describe PSGC::Import::Base do
 
   describe '#fetch' do
     before(:all) do
-      PSGC::Import::Base.dir = 'tmp'
+      PSGC::Import::Base.dir = '/tmp'
       PSGC::Import::Base.uri = 'http://localhost'
       task.src = 'test.html'
     end
-    it 'should execute curl' do
-      task.should_receive(:cmd).with('curl http://localhost/test.html > tmp/test.html')
+    
+    it "should curl if file doesn't exist" do
+      File.should_receive(:exist?).with('/tmp/test.html').and_return(false)
+      task.should_receive(:cmd).with('curl http://localhost/test.html > /tmp/test.html')
       task.fetch
     end
 
