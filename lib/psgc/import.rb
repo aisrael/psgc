@@ -1,3 +1,5 @@
+require 'digest/md5'
+
 module PSGC
   module Import
     # Base class for all other importers
@@ -21,8 +23,7 @@ module PSGC
       # Use `curl` to get the desired page
       def fetch
         target = File.join(Base.dir, src)
-        return if File.exist?(target)
-        cmd("curl #{full_source} > #{target}")
+        cmd("curl #{full_source} > #{target}") unless already_there(target)
       end
       
       # noop
@@ -30,6 +31,11 @@ module PSGC
       end
       
       protected
+
+      # Check if file exists and its MD5 hash equals expected_md5      
+      def already_there(file)
+        File.exists?(file) and Digest::MD5.file(file).hexdigest == expected_md5       
+      end
       
       # Shortcut for:
       #

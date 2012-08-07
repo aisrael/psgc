@@ -1,5 +1,7 @@
 require 'spec_helper'
 
+require 'digest/md5'
+
 describe PSGC::Import do
   it 'is a module' do
     PSGC::Import.should be_kind_of Module
@@ -58,13 +60,40 @@ describe PSGC::Import::Base do
     end
     
     it "should curl if file doesn't exist" do
-      File.should_receive(:exist?).with('/tmp/test.html').and_return(false)
-      task.should_receive(:cmd).with('curl http://localhost/test.html > /tmp/test.html')
+      target = '/tmp/test.html'
+      task.should_receive(:already_there).with(target).and_return(false)
+      task.should_receive(:cmd).with('curl http://localhost/test.html > ' + target)
       task.fetch
     end
 
-    it 'should verify expected_md5' do
-      
+    it 'should not curl if file exists' do
+      task.should_receive(:already_there).with('/tmp/test.html').and_return(true)
+      task.should_not_receive(:cmd)
+      task.fetch
+    end
+  end
+  
+  describe '#already_there' do
+    before(:all) do
+      PSGC::Import::Base.dir = '/tmp'
+      PSGC::Import::Base.uri = 'http://localhost'
+      task.src = 'test.html'
+    end
+    
+    it 'should check if file exists' do
+      target = '/tmp/test.html'
+      File.should_receive(:exists?).with(target)
+      task.send(:already_there, target)
+    end
+
+    it 'should check if file exists' do
+      target = '/tmp/test.html'
+      digest = mock('digest')
+      File.should_receive(:exists?).with(target).and_return(true)
+      Digest::MD5.should_receive(:file).with(target).and_return(digest)
+      digest.should_receive(:hexdigest).and_return('55349b2c7e24a01cf5a37673ada5b0f1')
+      task.expected_md5 = '55349b2c7e24a01cf5a37673ada5b0f1'
+      task.send(:already_there, target).should be_true
     end
   end
   
