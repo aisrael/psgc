@@ -9,9 +9,20 @@ module PSGC
       end
       
       def parse
-        File.open(target) do |io|
-          html = Nokogiri::HTML(io)
-          
+        regions = []
+        File.open(target) do |input|
+          html = Nokogiri::HTML(input)
+          html.css('p.headline a').each do |a|
+            href = a['href']
+            id = href[/=(\d+)$/, 1]
+            s = a/:strong
+            name = s[0].text
+            regions << {'id' => "#{id}", 'name' => name }
+            puts "#{name} => #{href} (#{id})"
+          end
+        end
+        File.open(PSGC::Region::REGION_DATA, 'w') do |out|
+          YAML::dump(regions, out)          
         end
       end
     end

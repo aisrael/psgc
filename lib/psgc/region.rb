@@ -16,6 +16,8 @@ module PSGC
         @@all ||= load_regions
       end
       
+      private
+      
       def load_regions
         regions = []
         File.open(REGION_DATA) do |io|
