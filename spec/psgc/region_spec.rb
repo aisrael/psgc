@@ -6,17 +6,17 @@ describe PSGC::Region do
       File.exists?(PSGC::Region::REGION_DATA).should be_true
     end
   end
-
-  it 'has an :id' do
-    should respond_to :id
+  
+  describe '.all' do
+    subject { PSGC::Region.all }
+    it { should be_a Enumerable }
+    it { subject.first.should be_a PSGC::Region }
   end
 
+  it { should respond_to :id }
   it { should respond_to :name }
-
-  it do
-    should respond_to :provinces
-    subject.should have_at_least(1).provinces
-  end  
+  it { should respond_to :provinces }
+  it { should have_at_least(1).provinces }
 
   describe '#provinces' do
     it 'is a collection of Province' do

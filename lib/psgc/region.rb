@@ -17,8 +17,13 @@ module PSGC
       end
       
       def load_regions
-        puts 'bah'
-        [Region.new(1, 'Region I')]
+        regions = []
+        File.open(REGION_DATA) do |io|
+          YAML::load_documents(io) do |h|
+            regions << PSGC::Region.new(h[:id], h[:name])
+          end
+        end
+        regions
       end
     end
   end
