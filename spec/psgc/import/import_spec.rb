@@ -70,7 +70,7 @@ describe PSGC::Import::Base do
 
     it 'should not curl if file exists' do
       task.should_receive(:already_there).with('/tmp/test.html').and_return(true)
-      task.should_receive(:puts).with('test.html already exists and matches expected hash, skipping')      
+      task.should_receive(:puts).with('/tmp/test.html already exists and matches expected hash, skipping')      
       task.should_not_receive(:cmd)
       task.fetch
     end

@@ -6,7 +6,6 @@ module PSGC
     class Base < Struct.new :src, :expected_md5
       @uri = URI('http://www.nscb.gov.ph/activestats/psgc/')
       @dir = File.expand_path(File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'web', @uri.host)))
-      
       class << self
         attr_accessor :dir
         attr_reader :uri
@@ -14,33 +13,40 @@ module PSGC
           @uri = uri.is_a?(URI) ? uri : URI(uri)
         end
       end
-      
+
       # Return the Base.uri + src
       def full_source
         URI.join(Base.uri, src)
       end
-      
+
       # Use `curl` to get the desired page
       def fetch
-        target = File.join(Base.dir, src)
         if already_there(target)
-          puts "#{src} already exists and matches expected hash, skipping"
+          puts "#{target} already exists and matches expected hash, skipping"
         else
-          cmd("curl #{full_source} > #{target}") 
+          cmd("curl #{full_source} > #{target}")
         end
+        parse
       end
-      
+
       # noop
       def parse
       end
-      
+
       protected
 
-      # Check if file exists and its MD5 hash equals expected_md5      
-      def already_there(file)
-        File.exists?(file) and Digest::MD5.file(file).hexdigest == expected_md5       
+      def target
+        @target ||= begin
+          t = File.join(Base.dir, src)
+          t.end_with?('.html') ? t : t + '.html'
+        end
       end
-      
+
+      # Check if file exists and its MD5 hash equals expected_md5
+      def already_there(file)
+        File.exists?(file) and Digest::MD5.file(file).hexdigest == expected_md5
+      end
+
       # Shortcut for:
       #
       #     puts(cmd); system(cmd)
@@ -50,7 +56,7 @@ module PSGC
         system cmd
       end
     end
-    
+
   end
 end
 
