@@ -1,6 +1,8 @@
 require 'spec_helper'
 
-describe PSGC::Import::ListReg do
+require 'psgc/import'
+
+describe PSGC::Import::ImportRegions do
   it 'initializes src to \'listreg.asp\'' do
     subject.src.should eq('listreg.asp')
   end

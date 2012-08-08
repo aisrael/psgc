@@ -54,4 +54,4 @@ module PSGC
   end
 end
 
-require 'psgc/import/list_reg'
+require 'psgc/import/import_regions'

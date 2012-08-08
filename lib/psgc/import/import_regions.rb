@@ -1,7 +1,7 @@
 module PSGC
   module Import
     # Import Region List
-    class ListReg < Base
+    class ImportRegions < Base
       def initialize
         super 'listreg.asp', '55349b2c7e24a01cf5a37673ada5b0f1'
       end

@@ -32,8 +32,8 @@ module PSGC
         directory base_dir
         
         desc "Fetch PSGC Web pages from www.ncsb.gov.ph"
-        task :fetch => base_dir do
-          reg = PSGC::Import::ListReg.new
+        task :fetch_regions => base_dir do
+          reg = PSGC::Import::ImportRegions.new
           reg.fetch
         end
       end
