@@ -4,7 +4,8 @@ module PSGC
     
     attr_accessor :provinces
     
-    def initialize
+    def initialize(id, name)
+      super(id, name)
       @provinces = [Province.new]
     end
   end
