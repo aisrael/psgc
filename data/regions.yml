@@ -1,35 +1,51 @@
 ---
-- id: '13'
-  name: NCR - National Capital Region
-- id: '14'
-  name: CAR - Cordillera Administrative Region
-- id: '01'
-  name: REGION I (Ilocos Region)
-- id: '02'
-  name: REGION II (Cagayan Valley)
-- id: '03'
-  name: REGION III (Central Luzon)
-- id: '04'
-  name: REGION IV-A (CALABARZON)
-- id: '17'
-  name: REGION IV-B (MIMAROPA)
-- id: '05'
-  name: REGION V (Bicol Region)
-- id: '06'
-  name: REGION VI (Western Visayas)
-- id: '07'
-  name: REGION VII (Central Visayas)
-- id: 08
-  name: REGION VIII (Eastern Visayas)
-- id: 09
-  name: REGION IX (Zamboanga Peninsula)
-- id: '10'
-  name: REGION X (Northern Mindanao)
-- id: '11'
-  name: REGION XI (Davao Region)
-- id: '12'
-  name: REGION XII (Soccsksargen)
-- id: '16'
-  name: REGION XIII (Caraga)
-- id: '15'
-  name: ARMM - Autonomous Region in Muslim Mindanao
+id: '13'
+name: NCR - National Capital Region
+---
+id: '14'
+name: CAR - Cordillera Administrative Region
+---
+id: '01'
+name: REGION I (Ilocos Region)
+---
+id: '02'
+name: REGION II (Cagayan Valley)
+---
+id: '03'
+name: REGION III (Central Luzon)
+---
+id: '04'
+name: REGION IV-A (CALABARZON)
+---
+id: '17'
+name: REGION IV-B (MIMAROPA)
+---
+id: '05'
+name: REGION V (Bicol Region)
+---
+id: '06'
+name: REGION VI (Western Visayas)
+---
+id: '07'
+name: REGION VII (Central Visayas)
+---
+id: 08
+name: REGION VIII (Eastern Visayas)
+---
+id: 09
+name: REGION IX (Zamboanga Peninsula)
+---
+id: '10'
+name: REGION X (Northern Mindanao)
+---
+id: '11'
+name: REGION XI (Davao Region)
+---
+id: '12'
+name: REGION XII (Soccsksargen)
+---
+id: '16'
+name: REGION XIII (Caraga)
+---
+id: '15'
+name: ARMM - Autonomous Region in Muslim Mindanao

@@ -22,7 +22,8 @@ module PSGC
         regions = []
         File.open(REGION_DATA) do |io|
           YAML::load_documents(io) do |h|
-            regions << PSGC::Region.new(h[:id], h[:name])
+            puts h
+            regions << PSGC::Region.new(h['id'], h['name'])
           end
         end
         regions

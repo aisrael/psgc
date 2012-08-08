@@ -17,12 +17,12 @@ module PSGC
             id = href[/=(\d+)$/, 1]
             s = a/:strong
             name = s[0].text
-            regions << {'id' => "#{id}", 'name' => name }
+            regions << {'id' => id, 'name' => name }
             puts "#{name} => #{href} (#{id})"
           end
         end
         File.open(PSGC::Region::REGION_DATA, 'w') do |out|
-          YAML::dump(regions, out)          
+          out << YAML::dump_stream(*regions)          
         end
       end
     end
