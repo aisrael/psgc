@@ -3,6 +3,8 @@ require 'fileutils'
 require 'rake'
 require 'rake/tasklib'
 
+require 'psgc/import'
+
 module PSGC
   class RakeTask < ::Rake::TaskLib
     

@@ -2,6 +2,8 @@ require 'spec_helper'
 
 require 'digest/md5'
 
+require 'psgc/import'
+
 describe PSGC::Import do
   it 'is a module' do
     PSGC::Import.should be_kind_of Module

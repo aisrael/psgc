@@ -53,3 +53,5 @@ module PSGC
     
   end
 end
+
+require 'psgc/import/list_reg'
