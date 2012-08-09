@@ -38,19 +38,20 @@ module PSGC
         File.open(target) do |input|
           parser.parse Nokogiri::HTML(input)
         end
-        File.open(PSGC::Province::PROVINCE_DATA, 'w+') do |out|
+        File.open(PSGC::Province::PROVINCE_DATA, 'a') do |out|
           parser.provinces.each { |province|
-            out << YAML::dump_stream(p)
+            out << YAML::dump_stream(province)
           }
         end
       end
       
       class Parser
         
-        attr_reader :provinces
+        attr_reader :provinces, :hrefs
         
         def initialize
           @provinces = []
+          @hrefs = {}
         end
         
         def parse(html)
@@ -60,8 +61,19 @@ module PSGC
           end
         end
         
-        def parse_row(row)
-          # noop
+        def parse_row(tr)
+          tds = tr/:td
+          if tds.size == 6
+            a = tds[0].css('p a')
+            if a
+              name = a.text
+              href = a[0]['href']
+              code = tds[1].text
+              puts "#{code}: #{name} => #{href}"
+              @provinces << { 'id' => code[0, 4], 'code' => code, 'name' => name}
+              @hrefs[code] = href
+            end
+          end
         end
       end
     end
