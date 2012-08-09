@@ -1,7 +1,7 @@
 require 'yaml'
 
 module PSGC
-  class Region < Struct.new :id, :name
+  class Region < Struct.new :id, :code, :name
     attr_accessor :provinces
     
     def initialize(*args)
@@ -22,8 +22,7 @@ module PSGC
         regions = []
         File.open(REGION_DATA) do |io|
           YAML::load_documents(io) do |h|
-            puts h
-            regions << PSGC::Region.new(h['id'], h['name'])
+            regions << PSGC::Region.new(h['id'], h['code'], h['name'])
           end
         end
         regions
