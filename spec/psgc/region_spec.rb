@@ -14,6 +14,7 @@ describe PSGC::Region do
   end
 
   it { should respond_to :id }
+  it { should respond_to :code }
   it { should respond_to :name }
   it { should respond_to :provinces }
   it { should have_at_least(1).provinces }
