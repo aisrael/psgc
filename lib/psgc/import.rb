@@ -1,3 +1,4 @@
+require 'uri'
 require 'digest/md5'
 
 module PSGC
@@ -42,9 +43,9 @@ module PSGC
         end
       end
 
-      # Check if file exists and its MD5 hash equals expected_md5
+      # Check if file exists and its MD5 hash equals expected_md5, if present
       def already_there(file)
-        File.exists?(file) and Digest::MD5.file(file).hexdigest == expected_md5
+        File.exists?(file) and !expected_md5.nil? and Digest::MD5.file(file).hexdigest == expected_md5
       end
 
       # Shortcut for:

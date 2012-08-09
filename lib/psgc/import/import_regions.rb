@@ -1,5 +1,7 @@
 require 'nokogiri'
 
+require_relative 'import_region_provinces'
+
 module PSGC
   module Import
     # Import Region List
@@ -14,16 +16,22 @@ module PSGC
           parser.parse Nokogiri::HTML(input)
         end
         File.open(PSGC::Region::REGION_DATA, 'w') do |out|
-          out << YAML::dump_stream(*parser.regions)          
+          out << YAML::dump_stream(*parser.regions)   
+        end
+        parser.hrefs.each do |id, href|
+          md5 = ImportRegionProvinces::EXPECTED_HASHES[href]
+          irp = ImportRegionProvinces.new id, href, md5
+          irp.fetch
         end
       end
       
       class Parser
         
-        attr_reader :regions
+        attr_reader :regions, :hrefs
         
         def initialize
           @regions = []
+          @hrefs = {}
         end
         
         def parse(html)
@@ -41,8 +49,8 @@ module PSGC
             name = (p/:strong).text
             t = (td[1]).text.split.join # removes newlines and extra whitespace
             code = t[/Code:(.*)$/, 1].strip
-            puts "(#{id}) #{code} #{name} => #{href}"
             @regions << {'id' => id, 'code' => code, 'name' => name }
+            @hrefs[id] = href
           end
         end
       end
