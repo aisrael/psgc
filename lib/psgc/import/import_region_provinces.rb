@@ -1,4 +1,5 @@
 require 'nokogiri'
+require 'fileutils'
 
 module PSGC
   module Import
@@ -38,7 +39,9 @@ module PSGC
         File.open(target) do |input|
           parser.parse Nokogiri::HTML(input)
         end
-        File.open(PSGC::Province::PROVINCE_DATA, 'a') do |out|
+        dir = File.join(PSGC::DATA_DIR, @region_id)
+        FileUtils.mkdir_p dir
+        File.open(File.join(dir, 'provinces.yml'), 'w') do |out|
           parser.provinces.each { |province|
             out << YAML::dump_stream(province)
           }
@@ -68,10 +71,9 @@ module PSGC
             if a
               name = a.text
               href = a[0]['href']
-              code = tds[1].text
-              puts "#{code}: #{name} => #{href}"
-              @provinces << { 'id' => code[0, 4], 'code' => code, 'name' => name}
-              @hrefs[code] = href
+              id = tds[1].text[0, 4]
+              @provinces << { 'id' => id, 'name' => name}
+              @hrefs[id] = href
             end
           end
         end

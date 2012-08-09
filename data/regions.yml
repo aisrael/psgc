@@ -1,68 +1,51 @@
 ---
 id: '13'
-code: '130000000'
 name: NCR - National Capital Region
 ---
 id: '14'
-code: '140000000'
 name: CAR - Cordillera Administrative Region
 ---
 id: '01'
-code: '010000000'
 name: REGION I (Ilocos Region)
 ---
 id: '02'
-code: '020000000'
 name: REGION II (Cagayan Valley)
 ---
 id: '03'
-code: '030000000'
 name: REGION III (Central Luzon)
 ---
 id: '04'
-code: '040000000'
 name: REGION IV-A (CALABARZON)
 ---
 id: '17'
-code: '170000000'
 name: REGION IV-B (MIMAROPA)
 ---
 id: '05'
-code: '050000000'
 name: REGION V (Bicol Region)
 ---
 id: '06'
-code: '060000000'
 name: REGION VI (Western Visayas)
 ---
 id: '07'
-code: '070000000'
 name: REGION VII (Central Visayas)
 ---
 id: 08
-code: 080000000
 name: REGION VIII (Eastern Visayas)
 ---
 id: 09
-code: 090000000
 name: REGION IX (Zamboanga Peninsula)
 ---
 id: '10'
-code: '100000000'
 name: REGION X (Northern Mindanao)
 ---
 id: '11'
-code: '110000000'
 name: REGION XI (Davao Region)
 ---
 id: '12'
-code: '120000000'
 name: REGION XII (Soccsksargen)
 ---
 id: '16'
-code: '160000000'
 name: REGION XIII (Caraga)
 ---
 id: '15'
-code: '150000000'
 name: ARMM - Autonomous Region in Muslim Mindanao

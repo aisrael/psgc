@@ -47,9 +47,7 @@ module PSGC
             href = (p/:a)[0]['href']
             id = href[/=(\d+)$/, 1]
             name = (p/:strong).text
-            t = (td[1]).text.split.join # removes newlines and extra whitespace
-            code = t[/Code:(.*)$/, 1].strip
-            @regions << {'id' => id, 'code' => code, 'name' => name }
+            @regions << {'id' => id, 'name' => name }
             @hrefs[id] = href
           end
         end

@@ -1,7 +1,7 @@
 require 'yaml'
 
 module PSGC
-  class Region < Struct.new :id, :code, :name
+  class Region < Struct.new :id, :name
     attr_accessor :provinces
     
     def initialize(*args)
@@ -10,6 +10,14 @@ module PSGC
     end
     
     REGION_DATA = File.join(PSGC::DATA_DIR, 'regions.yml')
+    
+    def code
+      "#{id}0000000"
+    end
+    
+    def province_data_path
+      File.join(PSGC::DATA_DIR, id, 'provinces.yml')
+    end
 
     class << self
       def all
