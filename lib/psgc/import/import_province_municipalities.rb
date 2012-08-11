@@ -2,19 +2,14 @@ require 'nokogiri'
 
 module PSGC
   module Import
-    # Import Region List
-    class ImportRegionProvinces < Base
+    # Import Province cities and municipalities
+    class ImportProvinceMunicipalities < Base
       
-      EXPECTED_HASHES = {
-        '01280000' => '1f481b1c0e31e3a5ae7b11bea10247a1'
-      }
+      attr_reader :provice_id
 
-      attr_reader :provice_id, :href
-
-      def initialize(province_id, href, md5)
-        super(href, md5)
+      def initialize(province_id, src)
+        super(src)
         @province_id = province_id
-        @href = href
       end
       
       def parse
@@ -22,19 +17,23 @@ module PSGC
         File.open(target) do |input|
           parser.parse Nokogiri::HTML(input)
         end
-        File.open(PSGC::CityOrMunicipality::COM_DATA, 'w+') do |out|
-          parser.coms.each { |com|
-            out << YAML::dump_stream(com)
+        region_id = @province_id.to_s[0, 2]
+        dir = File.join(PSGC::DATA_DIR, region_id, @province_id)
+        FileUtils.mkdir_p dir
+        File.open(File.join(dir, 'cities.yml'), 'w') do |out|
+          parser.cities.each { |city|
+            out << YAML::dump_stream(city)
           }
         end
       end
       
       class Parser
         
-        attr_reader :provinces, :hrefs
+        attr_reader :cities, :municipalities, :hrefs
         
         def initialize
-          @provinces = []
+          @cities = []
+          @municipalities = []
           @hrefs = {}
         end
         
@@ -47,16 +46,22 @@ module PSGC
         
         def parse_row(tr)
           tds = tr/:td
-          if tds.size == 6
+          if tds.size == 9
             a = tds[0].css('p a')
             if a
               name = a.text
               href = a[0]['href']
               code = tds[1].text
-              puts "#{code}: #{name} => #{href}"
+              city_class = tds[3].text.gsub("\u00A0", '').strip
+              city = !city_class.empty?
+              puts "#{code}: #{name} => #{href} (#{city ? 'City' : 'Municipality'})"
+              h = { 'id' => code, 'name' => name }
+              if city
+                @cities << h
+              else
+                @municipalities << h
+              end
             end
-            @provinces << { 'id' => code[0, 4], 'code' => code, 'name' => name}
-            @hrefs[code] = href
           end
         end
       end

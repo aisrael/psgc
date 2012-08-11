@@ -54,7 +54,8 @@ module PSGC
         'regview.asp?region=14' => '88b1a693a3236cf4142a205401a1cda3',
         'regview.asp?region=15' => 'ff50e60c59d4b912d2330c0ab1387bfb',
         'regview.asp?region=16' => '6f8bae6b2ddfaee4ac586b324252277a',
-        'regview.asp?region=17' => '46ec0e415d07ed9254855b5c0a369381'
+        'regview.asp?region=17' => '46ec0e415d07ed9254855b5c0a369381',
+        'province.asp?regName=REGION+I+%28Ilocos+Region%29&regCode=01&provCode=012800000&provName=ILOCOS NORTE' => '1f481b1c0e31e3a5ae7b11bea10247a1'
       }
       
       class << self
@@ -72,8 +73,7 @@ module PSGC
         # Check if file exists and its MD5 hash equals expected_md5, if present
         def already_there(src)
           file = File.join(Base.dir, src)
-          expected_md5 = CHECKSUMS[src]
-          File.exists?(file) and !expected_md5.nil? and Digest::MD5.file(file).hexdigest == expected_md5
+          File.exists?(file) and (!CHECKSUMS.key?(src) or Digest::MD5.file(file).hexdigest == CHECKSUMS[src])
         end
   
         # Shortcut for:
