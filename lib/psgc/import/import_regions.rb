@@ -19,8 +19,7 @@ module PSGC
           out << YAML::dump_stream(*parser.regions)   
         end
         parser.hrefs.each do |id, href|
-          md5 = ImportRegionProvinces::EXPECTED_HASHES[href]
-          irp = ImportRegionProvinces.new id, href, md5
+          irp = ImportRegionProvinces.new id, href
           irp.fetch
         end
       end

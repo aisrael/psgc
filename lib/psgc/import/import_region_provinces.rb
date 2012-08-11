@@ -26,12 +26,11 @@ module PSGC
         'regview.asp?region=17' => '46ec0e415d07ed9254855b5c0a369381'
       }
 
-      attr_reader :region_id, :href
+      attr_reader :region_id
 
-      def initialize(region_id, href, md5)
-        super(href, md5)
+      def initialize(region_id, href)
+        super(href)
         @region_id = region_id
-        @href = href
       end
       
       def parse
