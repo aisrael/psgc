@@ -28,7 +28,7 @@ describe PSGC::Import::DownloadManager do
 
     it 'should not curl if file exists' do
       subject.should_receive(:already_there).with(src).and_return(true)
-      subject.should_receive(:puts).with('/tmp/test.html already exists and matches expected hash, skipping')      
+      subject.should_receive(:puts).with('test.html already exists and matches expected hash, skipping')      
       subject.should_not_receive(:cmd)
       subject.fetch(src)
     end

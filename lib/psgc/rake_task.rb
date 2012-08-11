@@ -36,6 +36,18 @@ module PSGC
           reg = PSGC::Import::ImportRegions.new
           reg.fetch
         end
+        
+        desc "Compute md5 hashes of files under web/"
+        task :hashes => base_dir do
+          puts 'CHECKSUMS = {'
+          puts Dir.entries(base_dir).map {|f| 
+            unless File.directory?(f)
+              hash = Digest::MD5.file(File.join(base_dir, f)).hexdigest
+              "  '#{f}' => '#{hash}'"
+            end
+          }.compact.join(", \n")
+          puts '}'
+        end
       end
     end
   end
