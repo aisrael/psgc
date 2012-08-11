@@ -1,6 +1,8 @@
 = psgc
 
-The Philippine Standard Geographic Code (PSGC) provides the standard code for geographic areas of the country that rationalizes and integrates different existing geographic codes being used by various government agencies.
+The Philippine Standard Geographic Code (PSGC) provides the standard code for geographic areas of the Philippines
+ that rationalizes and integrates different existing geographic codes being used by various government agencies.
+
 It is published and maintained by the National Statistics Coordination Board at:
   http://www.nscb.gov.ph/activestats/psgc/
 
