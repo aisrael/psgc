@@ -52,15 +52,4 @@ describe PSGC::Import::Base do
       task.parse
     end
   end
-  
-  describe '#cmd' do
-    it 'is equivalent to puts(s) then system(s)' do
-      
-      s = 'echo Hello World'
-      task.should_receive(:puts).with(s)
-      task.should_receive(:system).with(s)
-      # bypass protected visibility
-      task.send :cmd, s
-    end
-  end
 end

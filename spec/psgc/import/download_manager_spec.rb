@@ -47,4 +47,15 @@ describe PSGC::Import::DownloadManager do
       subject.send(:already_there, src).should be_true
     end
   end
+
+  describe '.cmd' do
+    it 'is equivalent to puts(s) then system(s)' do
+      
+      s = 'echo Hello World'
+      subject.should_receive(:puts).with(s)
+      subject.should_receive(:system).with(s)
+      # bypass protected visibility
+      subject.send :cmd, s
+    end
+  end
 end
