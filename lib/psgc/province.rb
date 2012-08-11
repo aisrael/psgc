@@ -7,8 +7,10 @@ module PSGC
       is_a? Province
     end
   end
+ 
   class Province < ProvinceOrDistrict
   end
+
   class District < ProvinceOrDistrict
   end
 end
