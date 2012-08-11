@@ -11,9 +11,12 @@ describe PSGC::Import::DownloadManager do
 
   subject { PSGC::Import::DownloadManager }
   
-  before(:all) do
+  around(:each) do |e|
+    original_dir = PSGC::Import::Base.dir
     PSGC::Import::Base.dir = '/tmp'
     PSGC::Import::Base.uri = 'http://localhost'
+    e.run
+    PSGC::Import::Base.dir = original_dir
   end
   
   describe '.fetch' do
