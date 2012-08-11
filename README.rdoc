@@ -1,10 +1,10 @@
 = psgc
 
 The Philippine Standard Geographic Code (PSGC) provides the standard code for geographic areas of the Philippines
- that rationalizes and integrates different existing geographic codes being used by various government agencies.
+that rationalizes and integrates different existing geographic codes being used by various government agencies.
 
 It is published and maintained by the National Statistics Coordination Board at:
-  http://www.nscb.gov.ph/activestats/psgc/
+http://www.nscb.gov.ph/activestats/psgc/
 
 This Ruby gem provides the PSGC data as a Ruby class library. It can be used in Rails applications without requiring dedicated database tables.
 
