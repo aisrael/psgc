@@ -46,6 +46,9 @@ module PSGC
             out << YAML::dump_stream(province)
           }
         end
+        parser.hrefs.each do |province_id, href|
+          puts "#{province_id} => #{href}"
+        end
       end
       
       class Parser

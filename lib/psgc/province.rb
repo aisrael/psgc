@@ -1,5 +1,14 @@
 module PSGC
-  class Province < Struct.new :id, :name
-    PROVINCE_DATA = File.join(PSGC::DATA_DIR, 'provinces.yml')
+  class ProvinceOrDistrict < Struct.new :id, :name
+    def code
+      "#{id}00000"
+    end
+    def is_province?
+      is_a? Province
+    end
+  end
+  class Province < ProvinceOrDistrict
+  end
+  class District < ProvinceOrDistrict
   end
 end
