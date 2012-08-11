@@ -17,13 +17,28 @@ module PSGC
         File.open(target) do |input|
           parser.parse Nokogiri::HTML(input)
         end
+
+        # mkdir
         region_id = @province_id.to_s[0, 2]
         dir = File.join(PSGC::DATA_DIR, region_id, @province_id)
         FileUtils.mkdir_p dir
-        File.open(File.join(dir, 'cities.yml'), 'w') do |out|
-          parser.cities.each { |city|
-            out << YAML::dump_stream(city)
-          }
+        
+        # cities.yml
+        unless parser.cities.empty?
+          File.open(File.join(dir, 'cities.yml'), 'w') do |out|
+            parser.cities.each { |city|
+              out << YAML::dump_stream(city)
+            }
+          end
+        end
+        
+        # municipalities.yml
+        unless parser.municipalities.empty?
+          File.open(File.join(dir, 'municipalities.yml'), 'w') do |out|
+            parser.municipalities.each { |muni|
+              out << YAML::dump_stream(muni)
+            }
+          end
         end
       end
       
