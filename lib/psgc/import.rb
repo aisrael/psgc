@@ -17,7 +17,7 @@ module PSGC
 
       # Use `curl` to get the desired page
       def fetch
-        DownloadManager.fetch(full_source)
+        DownloadManager.fetch(src)
         parse
       end
 

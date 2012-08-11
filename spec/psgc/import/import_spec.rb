@@ -45,11 +45,18 @@ describe PSGC::Import::Base do
     should respond_to :expected_md5
   end
   
-  let(:task) { PSGC::Import::Base.new }
+  let(:task) { PSGC::Import::Base.new 'src' }
     
   describe '#parse' do
     it 'should do something' do
       task.parse
+    end
+  end
+  
+  describe '#fetch' do
+    it 'should delegate to DownloadManager' do
+      PSGC::Import::DownloadManager.should_receive(:fetch).with('src')
+      task.fetch
     end
   end
 end
