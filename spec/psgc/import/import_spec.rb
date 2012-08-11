@@ -37,15 +37,15 @@ describe PSGC::Import::Base do
     it { should eq(File.expand_path(File.join(File.dirname(__FILE__), '..', '..', '..', 'web', 'www.nscb.gov.ph'))) }
   end
 
-  it 'has attribute :src' do
-    should respond_to :src    
-  end
-  
-  it 'has attribute :expected_md5' do
-    should respond_to :expected_md5
-  end
-  
+  it { should respond_to :src } 
+
   let(:task) { PSGC::Import::Base.new 'src' }
+
+  describe '#target' do
+    it 'should be \'Base.dir/src\'' do
+      task.send(:target).should eq(File.join(PSGC::Import::Base.dir, 'src'))
+    end
+  end
     
   describe '#parse' do
     it 'should do something' do

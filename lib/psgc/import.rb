@@ -4,7 +4,7 @@ require 'digest/md5'
 module PSGC
   module Import
     # Base class for all other importers
-    class Base < Struct.new :src, :expected_md5
+    class Base < Struct.new :src
       @uri = URI('http://www.nscb.gov.ph/activestats/psgc/')
       @dir = File.expand_path(File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'web', @uri.host)))
       class << self
@@ -23,6 +23,12 @@ module PSGC
 
       # noop
       def parse
+      end
+      
+      protected
+      
+      def target
+        @target ||= File.join(Base.dir, src)
       end
 
     end
