@@ -36,7 +36,7 @@ module PSGC
     NOT_A_PROVINCE = ' (Not a Province)'
     
     def province_data_path
-      File.join(PSGC::DATA_DIR, id, 'provinces.yml')
+      File.join(PSGC::DATA_DIR, id, 'provinces.csv')
     end
     
     def load_provinces
