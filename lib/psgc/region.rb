@@ -6,7 +6,7 @@ module PSGC
       super(*args)
     end
     
-    REGION_DATA = File.join(PSGC::DATA_DIR, 'regions.yml')
+    REGION_DATA = File.join(PSGC::DATA_DIR, 'regions.csv')
     
     class << self
       def all
@@ -16,13 +16,10 @@ module PSGC
       private
       
       def load_regions
-        regions = []
-        File.open(REGION_DATA) do |io|
-          YAML::load_documents(io) do |h|
-            regions << PSGC::Region.new(h['id'], h['name'])
-          end
+        regions = CSV.open(REGION_DATA) do |csv|
+          csv.shift # skip header row
+          csv.read.map {|row| PSGC::Region.new(row[0], row[1])}
         end
-        regions
       end
     end
 
@@ -43,22 +40,18 @@ module PSGC
     end
     
     def load_provinces
-      provinces = []
-      File.open(province_data_path) do |io|
-        YAML::load_documents(io) do |h|
-          provinces << to_province_or_district(h)          
-        end
+      provinces = CSV.open(province_data_path) do |csv|
+        csv.shift # skip header row
+        csv.read.map {|row| to_province_or_district(*row)}
       end
-      provinces
     end
 
     # TODO Move to ProvinceOrDistrict    
-    def to_province_or_district(h)
-      name = h['name']
+    def to_province_or_district(id, name)
       if name.end_with? NOT_A_PROVINCE
-        PSGC::District.new h['id'], name.chomp(NOT_A_PROVINCE)
+        PSGC::District.new id, name.chomp(NOT_A_PROVINCE)
       else            
-        PSGC::Province.new h['id'], name
+        PSGC::Province.new id, name
       end
     end
 

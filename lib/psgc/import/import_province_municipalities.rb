@@ -23,21 +23,20 @@ module PSGC
         dir = File.join(PSGC::DATA_DIR, region_id, @province_id)
         FileUtils.mkdir_p dir
         
+        header = %w(id name)
         # cities.yml
         unless parser.cities.empty?
-          File.open(File.join(dir, 'cities.yml'), 'w') do |out|
-            parser.cities.each { |city|
-              out << YAML::dump_stream(city)
-            }
+          CSV.open(File.join(dir, 'cities.csv'), 'w') do |out|
+            out << header
+            parser.cities.each { |city| out << city }
           end
         end
         
         # municipalities.yml
         unless parser.municipalities.empty?
-          File.open(File.join(dir, 'municipalities.yml'), 'w') do |out|
-            parser.municipalities.each { |muni|
-              out << YAML::dump_stream(muni)
-            }
+          CSV.open(File.join(dir, 'municipalities.csv'), 'w') do |out|
+            out << header
+            parser.municipalities.each { |muni| out << muni }
           end
         end
       end
@@ -69,8 +68,7 @@ module PSGC
               code = tds[1].text
               city_class = tds[3].text.gsub("\u00A0", '').strip
               city = !city_class.empty?
-              puts "#{code}: #{name} => #{href} (#{city ? 'City' : 'Municipality'})"
-              h = { 'id' => code, 'name' => name }
+              h = [code, name]
               if city
                 @cities << h
               else

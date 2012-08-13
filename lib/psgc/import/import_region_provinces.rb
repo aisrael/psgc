@@ -22,10 +22,10 @@ module PSGC
         end
         dir = File.join(PSGC::DATA_DIR, @region_id)
         FileUtils.mkdir_p dir
-        File.open(File.join(dir, 'provinces.yml'), 'w') do |out|
-          parser.provinces.each { |province|
-            out << YAML::dump_stream(province)
-          }
+        header = %w(id name)
+        CSV.open(File.join(dir, 'provinces.csv'), 'w') do |out|
+          out << header
+          parser.provinces.each {|province| out << province }
         end
         parser.hrefs.each do |province_id, href|
           ipm = ImportProvinceMunicipalities.new province_id, href
@@ -57,7 +57,7 @@ module PSGC
               name = a.text
               href = a[0]['href']
               id = tds[1].text[0, 4]
-              @provinces << { 'id' => id, 'name' => name}
+              @provinces << [id, name]
               @hrefs[id] = "province.asp?provCode=#{id}00000"
             end
           end

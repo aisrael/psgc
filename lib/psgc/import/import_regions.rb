@@ -1,3 +1,5 @@
+require 'csv'
+
 require 'nokogiri'
 
 require_relative 'import_region_provinces'
@@ -15,8 +17,10 @@ module PSGC
         File.open(target) do |input|
           parser.parse Nokogiri::HTML(input)
         end
-        File.open(PSGC::Region::REGION_DATA, 'w') do |out|
-          out << YAML::dump_stream(*parser.regions)   
+        header = %w(id name)
+        CSV.open(PSGC::Region::REGION_DATA, 'w') do |out|
+          out << header
+          parser.regions.each {|region| out << region }
         end
         parser.hrefs.each do |id, href|
           irp = ImportRegionProvinces.new id, href
@@ -46,7 +50,7 @@ module PSGC
             href = (p/:a)[0]['href']
             id = href[/=(\d+)$/, 1]
             name = (p/:strong).text
-            @regions << {'id' => id, 'name' => name }
+            @regions << [id, name]
             @hrefs[id] = href
           end
         end
