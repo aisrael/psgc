@@ -3,7 +3,7 @@ module PSGC
     def code
       "#{id}00000"
     end
-    def is_province?
+    def province?
       is_a? Province
     end
     
