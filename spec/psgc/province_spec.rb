@@ -9,9 +9,10 @@ describe PSGC::Province do
   it { should respond_to :name }
   it { subject.should be_a_province }
 
-  it { should respond_to :cities }
-  it { should have_at_least(1).cities }
-
-  it { should respond_to :municipalities }
-  it { should have_at_least(1).municipalities }
+  describe '#cities' do
+    specify { subject.cities.should be_an_enumerable_of PSGC::City }
+  end
+  describe '#municipalities' do
+    specify { subject.municipalities.should be_an_enumerable_of PSGC::Municipality }
+  end
 end

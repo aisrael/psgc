@@ -16,8 +16,7 @@ describe PSGC::Region do
   
   describe '.all' do
     subject { PSGC::Region.all }
-    it { should be_a Enumerable }
-    it { subject.first.should be_a PSGC::Region }
+    it { should be_an_enumerable_of PSGC::Region }
   end
 
   subject { PSGC::Region[13] }
@@ -29,7 +28,7 @@ describe PSGC::Region do
   it { should have_at_least(1).provinces }
 
   describe '#provinces' do
-    it 'is a collection of Province || District' do
+    it 'is a collection of PSGC::Province or PSGC::District' do
       subject.provinces.should be_a Enumerable
       subject.provinces.first.should be_a_province_or_district
     end

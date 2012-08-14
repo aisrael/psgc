@@ -17,3 +17,10 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 require 'psgc'
+
+RSpec::Matchers.define :be_an_enumerable_of do |cls|
+  match do |target|
+    target.is_a?(Enumerable) and cls === target.first
+  end
+  description { "should be an Enumerable of #{cls}"}
+end
