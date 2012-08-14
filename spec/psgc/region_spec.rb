@@ -20,7 +20,7 @@ describe PSGC::Region do
     it { subject.first.should be_a PSGC::Region }
   end
 
-  subject { PSGC::Region.all.first }
+  subject { PSGC::Region[13] }
 
   it { should respond_to :id }
   it { should respond_to :code }
