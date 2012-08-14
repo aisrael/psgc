@@ -1,4 +1,4 @@
-require 'yaml'
+require 'csv'
 
 module PSGC
   class Region < Struct.new :id, :name
