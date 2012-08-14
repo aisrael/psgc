@@ -12,4 +12,6 @@ describe PSGC::Province do
   it { should respond_to :cities }
   it { should have_at_least(1).cities }
 
+  it { should respond_to :municipalities }
+  it { should have_at_least(1).municipalities }
 end
