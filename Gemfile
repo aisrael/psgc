@@ -17,7 +17,6 @@ group :development do
   gem 'simplecov', :platforms => :mri_19
 
   # for scraping
-  gem 'thor', '~> 0.15'
   gem 'nokogiri', '~> 1.5'
 end
 
