@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "psgc"
-  s.version = "0.2.1"
+  s.version = "0.2.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Alistair A. Israel"]
-  s.date = "2012-08-14"
+  s.date = "2012-08-16"
   s.description = "A Ruby gem that provides PSGC (Philippine Standard Geographic Code) data."
   s.email = "aisrel@gmail.com"
   s.extra_rdoc_files = [
@@ -217,7 +217,6 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<jeweler>, ["~> 1.8.4"])
       s.add_development_dependency(%q<rcov>, [">= 0"])
       s.add_development_dependency(%q<simplecov>, [">= 0"])
-      s.add_development_dependency(%q<thor>, ["~> 0.15"])
       s.add_development_dependency(%q<nokogiri>, ["~> 1.5"])
     else
       s.add_dependency(%q<rspec>, ["~> 2.11"])
@@ -226,7 +225,6 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
       s.add_dependency(%q<rcov>, [">= 0"])
       s.add_dependency(%q<simplecov>, [">= 0"])
-      s.add_dependency(%q<thor>, ["~> 0.15"])
       s.add_dependency(%q<nokogiri>, ["~> 1.5"])
     end
   else
@@ -236,7 +234,6 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<jeweler>, ["~> 1.8.4"])
     s.add_dependency(%q<rcov>, [">= 0"])
     s.add_dependency(%q<simplecov>, [">= 0"])
-    s.add_dependency(%q<thor>, ["~> 0.15"])
     s.add_dependency(%q<nokogiri>, ["~> 1.5"])
   end
 end
