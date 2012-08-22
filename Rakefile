@@ -21,6 +21,9 @@ Jeweler::Tasks.new do |gem|
   gem.description = %Q{A Ruby gem that provides PSGC (Philippine Standard Geographic Code) data.}
   gem.email = "aisrel@gmail.com"
   gem.authors = ["Alistair A. Israel"]
+
+  gem.files             = `git ls-files`.split("\n")
+  gem.test_files        = `git ls-files -- {test,spec}/*`.split("\n")
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new

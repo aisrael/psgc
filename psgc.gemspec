@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Alistair A. Israel"]
-  s.date = "2012-08-16"
+  s.date = "2012-08-22"
   s.description = "A Ruby gem that provides PSGC (Philippine Standard Geographic Code) data."
   s.email = "aisrel@gmail.com"
   s.extra_rdoc_files = [
@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     ".document",
+    ".gitignore",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
@@ -206,6 +207,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.24"
   s.summary = "Philippine Standard Geographic Code"
+  s.test_files = ["spec/psgc/import/download_manager_spec.rb", "spec/psgc/import/import_regions_spec.rb", "spec/psgc/import/import_spec.rb", "spec/psgc/province_spec.rb", "spec/psgc/psgc_spec.rb", "spec/psgc/region_spec.rb", "spec/spec_helper.rb"]
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
