@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "psgc"
-  s.version = "0.2.2"
+  s.version = "0.2.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Alistair A. Israel"]
-  s.date = "2012-08-22"
+  s.date = "2012-11-13"
   s.description = "A Ruby gem that provides PSGC (Philippine Standard Geographic Code) data."
   s.email = "aisrel@gmail.com"
   s.extra_rdoc_files = [
