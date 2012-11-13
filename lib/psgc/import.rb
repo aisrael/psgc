@@ -27,9 +27,9 @@ module PSGC
       # noop
       def parse
       end
-      
+
       protected
-      
+
       def target
         @target ||= File.join(Base.dir, src)
       end
@@ -148,7 +148,7 @@ module PSGC
 
       class << self
 
-        def fetch(src)          
+        def fetch(src)
           full_source = URI.join(Base.uri, src)
           target = File.join(Base.dir, src)
           if already_there(src)
@@ -157,13 +157,13 @@ module PSGC
             cmd("curl #{full_source} > #{target}")
           end
         end
-  
+
         # Check if file exists and its MD5 hash equals expected_md5, if present
         def already_there(src)
           file = File.join(Base.dir, src)
           File.exists?(file) and (!CHECKSUMS.key?(src) or Digest::MD5.file(file).hexdigest == CHECKSUMS[src])
         end
-  
+
         # Shortcut for:
         #
         #     puts(cmd); system(cmd)

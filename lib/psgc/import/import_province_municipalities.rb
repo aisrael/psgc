@@ -4,14 +4,14 @@ module PSGC
   module Import
     # Import Province cities and municipalities
     class ImportProvinceMunicipalities < Base
-      
+
       attr_reader :provice_id
 
       def initialize(province_id, src)
         super(src)
         @province_id = province_id
       end
-      
+
       def parse
         parser = Parser.new
         File.open(target) do |input|
@@ -22,7 +22,7 @@ module PSGC
         region_id = @province_id.to_s[0, 2]
         dir = File.join(PSGC::DATA_DIR, region_id, @province_id)
         FileUtils.mkdir_p dir
-        
+
         header = %w(id name)
         # cities.yml
         unless parser.cities.empty?
@@ -31,7 +31,7 @@ module PSGC
             parser.cities.each { |city| out << city }
           end
         end
-        
+
         # municipalities.yml
         unless parser.municipalities.empty?
           CSV.open(File.join(dir, 'municipalities.csv'), 'w') do |out|
@@ -40,24 +40,24 @@ module PSGC
           end
         end
       end
-      
+
       class Parser
-        
+
         attr_reader :cities, :municipalities, :hrefs
-        
+
         def initialize
           @cities = []
           @municipalities = []
           @hrefs = {}
         end
-        
+
         def parse(html)
           html.css('table').each do |table|
             rows = table/:tr
             parse_row(rows[0]) if rows.count == 1
           end
         end
-        
+
         def parse_row(tr)
           tds = tr/:td
           if tds.size == 9

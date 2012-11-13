@@ -7,13 +7,13 @@ RSpec::Matchers.define :be_a_province_or_district do
 end
 
 describe PSGC::Region do
-  
+
   describe '.REGION_DATA' do
     it 'is a file' do
       File.exists?(PSGC::Region::REGION_DATA).should be_true
     end
   end
-  
+
   describe '.all' do
     subject { PSGC::Region.all }
     it { should be_an_enumerable_of PSGC::Region }

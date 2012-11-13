@@ -5,16 +5,16 @@ module PSGC
     def initialize(*args)
       super(*args)
     end
-    
+
     REGION_DATA = File.join(PSGC::DATA_DIR, 'regions.csv')
-    
+
     class << self
       def all
         @@all ||= load_regions
       end
-      
+
       def [](id)
-        case 
+        case
         when id.kind_of?(Fixnum)
           map_by_num[id]
         when id.kind_of?(String)
@@ -23,16 +23,16 @@ module PSGC
           raise "\"#{id}\" expected either String or Fixnum (was #{id.class})"
         end
       end
-      
+
       private
-      
+
       def load_regions
         regions = CSV.open(REGION_DATA) do |csv|
           csv.shift # skip header row
           csv.read.map {|row| PSGC::Region.new(row[0], row[1])}
         end
       end
-      
+
       def map_by_num
         @@map_by_num ||= all.inject({}) {|hash, region| hash[region.id.to_i] = region; hash }
       end
@@ -45,19 +45,19 @@ module PSGC
     def code
       "#{id}0000000"
     end
-    
+
     def provinces
       @provinces ||= load_provinces
     end
-    
+
     private
-    
+
     NOT_A_PROVINCE = ' (Not a Province)'
-    
+
     def province_data_path
       File.join(PSGC::DATA_DIR, id, 'provinces.csv')
     end
-    
+
     def load_provinces
       CSV.open(province_data_path) do |csv|
         csv.shift # skip header row
@@ -65,11 +65,11 @@ module PSGC
       end
     end
 
-    # TODO Move to ProvinceOrDistrict    
+    # TODO Move to ProvinceOrDistrict
     def to_province_or_district(id, name)
       if name.end_with? NOT_A_PROVINCE
         PSGC::District.new id, name.chomp(NOT_A_PROVINCE)
-      else            
+      else
         PSGC::Province.new id, name
       end
     end

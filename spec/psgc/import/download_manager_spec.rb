@@ -5,12 +5,12 @@ require 'digest/md5'
 require 'psgc/import'
 
 describe PSGC::Import::DownloadManager do
-  
+
   let(:src) { 'test.html' }
   let(:target) { '/tmp/test.html'}
 
   subject { PSGC::Import::DownloadManager }
-  
+
   around(:each) do |e|
     original_dir = PSGC::Import::Base.dir
     PSGC::Import::Base.dir = '/tmp'
@@ -18,7 +18,7 @@ describe PSGC::Import::DownloadManager do
     e.run
     PSGC::Import::Base.dir = original_dir
   end
-  
+
   describe '.fetch' do
     it "should curl if file doesn't exist" do
       subject.should_receive(:already_there).with(src).and_return(false)
@@ -28,12 +28,12 @@ describe PSGC::Import::DownloadManager do
 
     it 'should not curl if file exists' do
       subject.should_receive(:already_there).with(src).and_return(true)
-      subject.should_receive(:puts).with('test.html already exists and matches expected hash, skipping')      
+      subject.should_receive(:puts).with('test.html already exists and matches expected hash, skipping')
       subject.should_not_receive(:cmd)
       subject.fetch(src)
     end
   end
-  
+
   describe '.already_there' do
     it 'should check if file exists' do
       File.should_receive(:exists?).with(target)
@@ -53,7 +53,7 @@ describe PSGC::Import::DownloadManager do
 
   describe '.cmd' do
     it 'is equivalent to puts(s) then system(s)' do
-      
+
       s = 'echo Hello World'
       subject.should_receive(:puts).with(s)
       subject.should_receive(:system).with(s)

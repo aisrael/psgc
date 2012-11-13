@@ -6,7 +6,7 @@ require_relative 'import_province_municipalities'
 module PSGC
   module Import
     # Import Region List
-    class ImportRegionProvinces < Base     
+    class ImportRegionProvinces < Base
 
       attr_reader :region_id
 
@@ -14,7 +14,7 @@ module PSGC
         super(src)
         @region_id = region_id
       end
-      
+
       def parse
         parser = Parser.new
         File.open(target) do |input|
@@ -29,26 +29,26 @@ module PSGC
         end
         parser.hrefs.each do |province_id, href|
           ipm = ImportProvinceMunicipalities.new province_id, href
-          ipm.fetch 
+          ipm.fetch
         end
       end
-      
+
       class Parser
-        
+
         attr_reader :provinces, :hrefs
-        
+
         def initialize
           @provinces = []
           @hrefs = {}
         end
-        
+
         def parse(html)
           html.css('table').each do |table|
             rows = table/:tr
             parse_row(rows[0]) if rows.count == 1
           end
         end
-        
+
         def parse_row(tr)
           tds = tr/:td
           if tds.size == 6

@@ -11,7 +11,7 @@ module PSGC
       def initialize
         super 'listreg.asp'
       end
-      
+
       def parse
         parser = Parser.new
         File.open(target) do |input|
@@ -27,22 +27,22 @@ module PSGC
           irp.fetch
         end
       end
-      
+
       class Parser
-        
+
         attr_reader :regions, :hrefs
-        
+
         def initialize
           @regions = []
           @hrefs = {}
         end
-        
+
         def parse(html)
           html.css('table.table4').each do |table|
             parse_table(table)
           end
         end
-        
+
         def parse_table(table)
           td = table/:td
           if (td.size == 2)
