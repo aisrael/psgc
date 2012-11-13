@@ -45,7 +45,7 @@ module PSGC
               hash = Digest::MD5.file(File.join(base_dir, f)).hexdigest
               "  '#{f}' => '#{hash}'"
             end
-          }.compact.join(", \n")
+          }.compact.join(",\n")
           puts '}'
         end
       end
