@@ -31,13 +31,13 @@ module PSGC
 
         directory base_dir
 
-        desc "Fetch PSGC Web pages from www.ncsb.gov.ph"
+        desc 'Fetch PSGC Web pages from www.ncsb.gov.ph'
         task :import => base_dir do
           reg = PSGC::Import::ImportRegions.new
           reg.fetch
         end
 
-        desc "Compute md5 hashes of files under web/"
+        desc 'Compute md5 hashes of files under web/'
         task :hashes => base_dir do
           puts 'CHECKSUMS = {'
           puts Dir.entries(base_dir).map {|f|
