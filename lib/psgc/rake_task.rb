@@ -41,9 +41,12 @@ module PSGC
         task :hashes => base_dir do
           puts 'CHECKSUMS = {'
           puts Dir.entries(base_dir).map {|f|
-            unless File.directory?(f)
-              hash = Digest::MD5.file(File.join(base_dir, f)).hexdigest
-              "  '#{f}' => '#{hash}'"
+            unless f.start_with?('.')
+              p = File.join(base_dir, f)
+              if File.file?(p) && File.size(p) > 0
+                hash = Digest::MD5.file(File.join(base_dir, f)).hexdigest
+                "  '#{f}' => '#{hash}'"
+              end
             end
           }.compact.join(",\n")
           puts '}'

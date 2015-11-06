@@ -17,7 +17,7 @@ module PSGC
 
       def parse
         parser = Parser.new
-        File.open(target) do |input|
+        File.open(full_target) do |input|
           parser.parse Nokogiri::HTML(input)
         end
         dir = File.join(PSGC::DATA_DIR, @region_id)

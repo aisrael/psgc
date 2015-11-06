@@ -1,0 +1,71 @@
+id,name,urban_rural,population
+050506001,Bgy. 47 - Arimbay,Urban,3659 
+050506002,Bgy. 64 - Bagacay (Bgy. 41 Bagacay),Urban,1603 
+050506003,Bgy. 48 - Bagong Abre (Bgy. 42),Urban,1376 
+050506004,Bgy. 66 - Banquerohan (Bgy. 43),Urban,6313 
+050506005,Bgy. 1 - Em's Barrio (Pob.),Urban,3817 
+050506007,Bgy. 11 - Maoyod Pob. (Bgy. 10 & 11),Urban,970 
+050506008,Bgy. 12 - Tula-tula (Pob.),Urban,2686 
+050506009,Bgy. 13 - Ilawod West Pob. (Ilawod 1),Urban,735 
+050506010,Bgy. 14 - Ilawod Pob. (Ilawod 2),Urban,825 
+050506011,Bgy. 15 - Ilawod East Pob. (Ilawod 3),Urban,1790 
+050506012,Bgy. 16 - Kawit-East Washington Drive (Pob.),Urban,5130 
+050506013,"Bgy. 17 - Rizal Sreet., Ilawod (Pob.)",Urban,1832 
+050506015,Bgy. 19 - Cabagñan,Urban,1246 
+050506016,Bgy. 2 - Em's Barrio South (Pob.),Urban,1806 
+050506017,Bgy. 18 - Cabagñan West (Pob.),Urban,2668 
+050506018,Bgy. 21 - Binanuahan West (Pob.),Urban,866 
+050506019,Bgy. 22 - Binanuahan East (Pob.),Urban,1514 
+050506020,Bgy. 23 - Imperial Court Subd. (Pob.),Urban,680 
+050506021,Bgy. 20 - Cabagñan East (Pob.),Urban,560 
+050506022,Bgy. 25 - Lapu-lapu (Pob.),Urban,1279 
+050506023,Bgy. 26 - Dinagaan (Pob.),Urban,863 
+050506024,Bgy. 27 - Victory Village South (Pob.),Urban,1346 
+050506025,Bgy. 28 - Victory Village North (Pob.),Urban,2819 
+050506026,Bgy. 29 - Sabang (Pob.),Urban,1638 
+050506027,Bgy. 3 - Em's Barrio East (Pob.),Urban,973 
+050506028,Bgy. 36 - Kapantawan (Pob.),Urban,766 
+050506029,Bgy. 30 - Pigcale (Pob.),Urban,1589 
+050506030,Bgy. 31 - Centro-Baybay (Pob.),Urban,1332 
+050506032,Bgy. 33 - PNR-Peñaranda St.-Iraya (Pob.),Urban,2905 
+050506033,Bgy. 34 - Oro Site-Magallanes St. (Pob.),Urban,2440 
+050506034,Bgy. 35 - Tinago (Pob.),Urban,513 
+050506035,Bgy. 37 - Bitano (Pob.),Urban,7022 
+050506037,Bgy. 39 - Bonot (Pob.),Urban,3594 
+050506038,Bgy. 4 - Sagpon Pob. (Sagpon 1),Urban,881 
+050506039,Bgy. 5 - Sagmin Pob. (Sagpon 2),Urban,1261 
+050506040,Bgy. 6 - Bañadero Pob. (Sagpon 3),Urban,1353 
+050506041,Bgy. 7 - Baño (Pob.),Urban,817 
+050506042,Bgy. 8 - Bagumbayan (Pob.),Urban,3175 
+050506043,Bgy. 9 - Pinaric (Pob.),Urban,1415 
+050506044,Bgy. 67 - Bariis (Bgy. 46),Urban,1952 
+050506045,Bgy. 49 - Bigaa (Bgy. 44),Urban,5992 
+050506046,Bgy. 41 - Bogtong (Bgy. 45),Urban,4291 
+050506047,Bgy. 53 - Bonga (Bgy. 48),Urban,3319 
+050506048,Bgy. 69 - Buenavista (Bgy.47),Urban,1167 
+050506049,Bgy. 51 - Buyuan (Bgy. 49),Urban,3431 
+050506050,Bgy. 70 - Cagbacong (Bgy. 50),Urban,2131 
+050506051,Bgy. 40 - Cruzada (Bgy. 52),Urban,5198 
+050506052,Bgy. 57 - Dap-dap (Bgy. 69),Urban,2078 
+050506053,Bgy. 45 - Dita (Bgy. 51),Urban,1652 
+050506054,Bgy. 55 - Estanza (Bgy. 53),Urban,4159 
+050506055,Bgy. 38 - Gogon (Bgy. 54),Urban,5296 
+050506056,Bgy. 62 - Homapon (Bgy. 55),Urban,4233 
+050506057,Bgy. 65 - Imalnod (Bgy. 57),Urban,2027 
+050506058,Bgy. 54 - Mabinit (Bgy. 59),Urban,1361 
+050506059,Bgy. 63 - Mariawa (Bgy. 56),Urban,1603 
+050506060,Bgy. 61 - Maslog (Bgy. 58),Urban,4116 
+050506061,Bgy. 50 - Padang (Bgy. 60),Urban,1350 
+050506062,Bgy. 44 - Pawa (Bgy. 61),Urban,3348 
+050506063,Bgy. 59 - Puro (Bgy. 63),Urban,4409 
+050506064,Bgy. 42 - Rawis (Bgy. 65),Urban,8399 
+050506065,Bgy. 68 - San Francisco (Bgy. 62),Urban,2384 
+050506066,Bgy. 46 - San Joaquin (Bgy. 64),Urban,2010 
+050506067,Bgy. 32 - San Roque (Bgy. 66),Urban,5109 
+050506069,Bgy. 43 - Tamaoyan (Bgy. 67),Urban,1592 
+050506070,Bgy. 56 - Taysan (Bgy. 68),Urban,11418 
+050506071,Bgy. 52 - Matanag,Urban,1792 
+050506072,Bgy. 10 - Cabugao,Urban,587 
+050506073,Bgy. 24 - Rizal Street,Urban,2104 
+050506074,Bgy. 58 - Buragwis,Urban,4026 
+050506077,Bgy. 60 - Lamba,Urban,1610 

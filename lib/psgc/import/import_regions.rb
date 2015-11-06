@@ -14,7 +14,7 @@ module PSGC
 
       def parse
         parser = Parser.new
-        File.open(target) do |input|
+        File.open(full_target) do |input|
           parser.parse Nokogiri::HTML(input)
         end
         header = %w(id name)

@@ -1,0 +1,183 @@
+id,name,urban_rural,population
+112402001,Acacia,Rural,2999
+112402002,Agdao,Urban,7811
+112402003,Alambre,Rural,1620
+112402004,Atan-Awe,Rural,1060
+112402005,Bago Gallera,Rural,14751
+112402006,Bago Oshiro,Rural,8305
+112402007,Baguio (Pob.),Urban,3885
+112402009,Balengaeng,Rural,2041
+112402010,Baliok,Rural,13769
+112402012,Bangkas Heights,Rural,7191
+112402013,Baracatan,Rural,2561
+112402014,Bato,Rural,7133
+112402015,Bayabas,Rural,2606
+112402016,Biao Escuela,Rural,3009
+112402017,Biao Guianga,Rural,2962
+112402018,Biao Joaquin,Rural,1767
+112402019,Binugao,Rural,6074
+112402020,Bucana,Urban,78352
+112402021,Buhangin (Pob.),Urban,61461
+112402022,Bunawan (Pob.),Urban,20950
+112402023,Cabantian,Rural,43351
+112402024,Cadalian,Rural,2290
+112402026,Calinan (Pob.),Urban,22979
+112402027,Callawa,Rural,2848
+112402028,Camansi,Rural,1172
+112402029,Carmen,Rural,1946
+112402030,Catalunan Grande,Urban,30068
+112402031,Catalunan Pequeño,Rural,19996
+112402032,Catigan,Rural,2698
+112402033,Cawayan,Rural,2186
+112402034,Colosas,Rural,4912
+112402035,Communal,Rural,7403
+112402036,Crossing Bayabas,Urban,12349
+112402037,Dacudao,Rural,4206
+112402038,Dalag,Rural,1353
+112402039,Dalagdag,Rural,841
+112402040,Daliao,Urban,19993
+112402041,Daliaon Plantation,Rural,3324
+112402042,Dominga,Rural,1218
+112402043,Dumoy,Urban,18804
+112402044,Eden,Rural,2309
+112402045,Fatima (Benowang),Rural,2969
+112402047,Gatungan,Rural,981
+112402048,Gumalang,Rural,4849
+112402049,Ilang,Urban,18380
+112402050,Indangan,Rural,9133
+112402051,Kilate,Rural,1193
+112402052,Lacson,Rural,4466
+112402053,Lamanan,Rural,3343
+112402054,Lampianao,Rural,760
+112402055,Langub,Rural,2677
+112402056,Alejandra Navarro (Lasang),Urban,8854
+112402057,Lizada,Urban,16725
+112402058,Los Amigos,Rural,5221
+112402059,Lubogan,Urban,9719
+112402060,Lumiad,Rural,1441
+112402061,Ma-a,Urban,49915
+112402062,Mabuhay,Rural,1055
+112402063,Magtuod,Rural,3815
+112402064,Mahayag,Rural,4914
+112402065,Malabog,Rural,10015
+112402066,Malagos,Rural,5933
+112402067,Malamba,Rural,3661
+112402068,Manambulan,Rural,2611
+112402069,Mandug,Urban,13234
+112402070,Manuel Guianga,Rural,6088
+112402071,Mapula,Rural,2284
+112402072,Marapangi,Rural,6128
+112402073,Marilog,Rural,14545
+112402074,Matina Aplaya,Urban,29642
+112402075,Matina Crossing,Urban,34166
+112402077,Matina Pangi,Rural,13625
+112402078,Matina Biao,Rural,1340
+112402079,Mintal,Urban,12518
+112402080,Mudiang,Rural,2570
+112402081,Mulig,Rural,2101
+112402082,New Carmen,Rural,1961
+112402083,New Valencia,Rural,1516
+112402086,Pampanga,Rural,14480
+112402087,Panacan,Urban,34379
+112402088,Panalum,Rural,1713
+112402089,Pandaitan,Rural,3366
+112402090,Pangyan,Rural,1725
+112402091,Paquibato (Pob.),Rural,2104
+112402092,Paradise Embak,Rural,2368
+112402097,Riverside,Rural,5108
+112402098,Salapawan,Rural,1716
+112402099,Salaysay,Rural,3936
+112402100,San Isidro (Licanan),Rural,4260
+112402101,Sasa,Urban,56697
+112402102,Sibulan,Rural,2365
+112402104,Sirawan,Rural,5792
+112402105,Sirib,Rural,4887
+112402106,Suawan (Tuli),Rural,3631
+112402107,Subasta,Rural,3466
+112402108,Sumimao,Rural,1404
+112402110,Tacunan,Rural,3093
+112402112,Tagakpan,Rural,4186
+112402113,Tagluno,Rural,1323
+112402114,Tagurano,Rural,1150
+112402115,Talandang,Rural,3118
+112402116,Talomo (Pob.),Urban,58414
+112402117,Talomo River,Rural,5660
+112402118,Tamayong,Rural,5782
+112402119,Tambobong,Rural,5243
+112402120,Tamugan,Rural,8253
+112402121,Tapak,Rural,4351
+112402122,Tawan-tawan,Rural,3463
+112402123,Tibuloy,Rural,2141
+112402124,Tibungco,Urban,36416
+112402125,Tigatto,Rural,14533
+112402126,Toril (Pob.),Urban,11889
+112402127,Tugbok (Pob.),Urban,9107
+112402128,Tungakalan,Rural,2836
+112402129,Ula,Rural,3686
+112402131,Wangan,Rural,4742
+112402133,Wines,Rural,2775
+112402134,Barangay 1-A (Pob.),Urban,3038
+112402135,Barangay 2-A (Pob.),Urban,2953
+112402136,Barangay 3-A (Pob.),Rural,399
+112402137,Barangay 4-A (Pob.),Rural,1706
+112402138,Barangay 5-A (Pob.),Urban,11232
+112402139,Barangay 6-A (Pob.),Urban,2046
+112402140,Barangay 7-A (Pob.),Rural,4334
+112402141,Barangay 8-A (Pob.),Urban,8859
+112402142,Barangay 9-A (Pob.),Rural,4848
+112402143,Barangay 10-A (Pob.),Rural,4613
+112402144,Barangay 11-B (Pob.),Rural,1647
+112402145,Barangay 12-B (Pob.),Rural,990
+112402146,Barangay 13-B (Pob.),Rural,154
+112402147,Barangay 14-B (Pob.),Rural,1127
+112402148,Barangay 15-B (Pob.),Rural,2700
+112402149,Barangay 16-B (Pob.),Rural,560
+112402150,Barangay 17-B (Pob.),Rural,774
+112402151,Barangay 18-B (Pob.),Rural,1561
+112402152,Barangay 19-B (Pob.),Urban,29247
+112402153,Barangay 20-B (Pob.),Urban,4499
+112402154,Barangay 21-C (Pob.),Rural,7097
+112402155,Barangay 22-C (Pob.),Urban,6027
+112402156,Barangay 23-C (Pob.),Urban,15125
+112402157,Barangay 24-C (Pob.),Urban,2115
+112402158,Barangay 25-C (Pob.),Rural,1496
+112402159,Barangay 26-C (Pob.),Rural,2146
+112402160,Barangay 27-C (Pob.),Rural,2117
+112402161,Barangay 28-C (Pob.),Rural,2234
+112402162,Barangay 29-C (Pob.),Urban,1304
+112402163,Barangay 30-C (Pob.),Urban,1468
+112402164,Barangay 31-D (Pob.),Rural,7276
+112402165,Barangay 32-D (Pob.),Rural,2002
+112402166,Barangay 33-D (Pob.),Urban,2049
+112402167,Barangay 34-D (Pob.),Rural,1093
+112402168,Barangay 35-D (Pob.),Rural,597
+112402169,Barangay 36-D (Pob.),Rural,1548
+112402170,Barangay 37-D (Pob.),Urban,5819
+112402171,Barangay 38-D (Pob.),Urban,1487
+112402172,Barangay 39-D (Pob.),Urban,4106
+112402173,Barangay 40-D (Pob.),Urban,2057
+112402174,Angalan,Rural,2465
+112402175,Baganihan,Rural,1280
+112402176,Bago Aplaya,Urban,14658
+112402177,Bantol,Rural,1860
+112402178,Buda,Rural,1571
+112402179,Centro (San Juan),Rural,14398
+112402180,Datu Salumay,Rural,1469
+112402181,Gov. Paciano Bangoy,Rural,9717
+112402182,Gov. Vicente Duterte,Urban,9072
+112402183,Gumitan,Rural,1219
+112402184,Inayangan,Rural,4058
+112402185,"Kap. Tomas Monteverde, Sr.",Rural,5813
+112402186,Lapu-lapu,Urban,10094
+112402187,"Leon Garcia, Sr.",Rural,12641
+112402188,Magsaysay,Rural,2347
+112402189,Megkawayan,Rural,2766
+112402190,Rafael Castillo,Urban,6339
+112402191,Saloy,Rural,1884
+112402192,San Antonio,Rural,12211
+112402193,Santo Niño,Rural,18395
+112402194,Ubalde,Urban,2775
+112402195,Waan,Rural,3179
+112402196,Wilfredo Aquino,Rural,8535
+112402197,Alfonso Angliongto Sr.,Rural,15758
+112402198,Vicente Hizon Sr.,Rural,11883

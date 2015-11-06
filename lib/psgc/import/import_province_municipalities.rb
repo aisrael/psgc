@@ -1,9 +1,13 @@
 require 'nokogiri'
 
+require_relative 'import_municipality_barangays'
+
 module PSGC
   module Import
     # Import Province cities and municipalities
     class ImportProvinceMunicipalities < Base
+
+      CSV_HEADER = %w(id name)
 
       attr_reader :provice_id
 
@@ -14,31 +18,36 @@ module PSGC
 
       def parse
         parser = Parser.new
-        File.open(target) do |input|
+        File.open(full_target) do |input|
           parser.parse Nokogiri::HTML(input)
         end
 
         # mkdir
-        region_id = @province_id.to_s[0, 2]
-        dir = File.join(PSGC::DATA_DIR, region_id, @province_id)
+        region_dir = @province_id.to_s[0, 2]
+        dir = File.join(PSGC::DATA_DIR, region_dir, @province_id)
         FileUtils.mkdir_p dir
 
-        header = %w(id name)
-        # cities.yml
+        # cities.csv
         unless parser.cities.empty?
           CSV.open(File.join(dir, 'cities.csv'), 'w') do |out|
-            out << header
+            out << CSV_HEADER
             parser.cities.each { |city| out << city }
           end
         end
 
-        # municipalities.yml
+        # municipalities.csv
         unless parser.municipalities.empty?
           CSV.open(File.join(dir, 'municipalities.csv'), 'w') do |out|
-            out << header
+            out << CSV_HEADER
             parser.municipalities.each { |muni| out << muni }
           end
         end
+
+        parser.hrefs.each do |municipality_id, href|
+          ipm = ImportMunicipalityBarangays.new municipality_id, href
+          ipm.fetch
+        end
+
       end
 
       class Parser
@@ -60,9 +69,9 @@ module PSGC
 
         def parse_row(tr)
           tds = tr/:td
-          if tds.size == 9
+          if tds.size == 8
             a = tds[0].css('p a')
-            if a
+            if a.count > 0
               name = a.text
               href = a[0]['href']
               code = tds[1].text
@@ -74,6 +83,7 @@ module PSGC
               else
                 @municipalities << h
               end
+              @hrefs[code] = href
             end
           end
         end
