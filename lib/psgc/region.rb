@@ -18,7 +18,7 @@ module PSGC
         when id.kind_of?(Fixnum)
           map_by_num[id]
         when id.kind_of?(String)
-          map_by_num[id]
+          map_by_string[id]
         else
           raise "\"#{id}\" expected either String or Fixnum (was #{id.class})"
         end

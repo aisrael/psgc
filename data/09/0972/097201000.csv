@@ -1,0 +1,51 @@
+id,name,urban_rural,population
+097201001,Aliguay,Rural, 647 
+097201002,Antipolo,Rural, 1479 
+097201003,Aseniero,Rural, 1908 
+097201004,Ba-ao,Rural, 794 
+097201005,Banbanan,Rural, 1080 
+097201006,Barcelona,Rural, 1817 
+097201007,Baylimango,Rural, 1315 
+097201009,Burgos,Rural, 1400 
+097201010,Canlucani,Rural, 1014 
+097201011,Carang,Rural, 761 
+097201012,Dampalan,Rural, 1345 
+097201013,Daro,Rural, 635 
+097201014,Diwa-an,Rural, 1005 
+097201016,Guimputlan,Rural, 760 
+097201017,Hilltop,Rural, 906 
+097201018,Ilaya,Urban, 2653 
+097201019,Larayan,Rural, 1895 
+097201020,Liyang,Rural, 1014 
+097201021,Maria Cristina,Rural, 2058 
+097201022,Maria Uray,Rural, 1493 
+097201023,Masidlakon,Rural, 1251 
+097201024,Napo,Rural, 933 
+097201025,Opao,Rural, 1434 
+097201026,Oro,Rural, 1095 
+097201027,Owaon,Rural, 1649 
+097201028,Oyan,Rural, 942 
+097201031,Polo,Rural, 3115 
+097201032,Potungan,Rural, 1353 
+097201033,San Francisco,Rural, 592 
+097201034,San Nicolas,Rural, 1333 
+097201035,San Pedro,Rural, 1817 
+097201036,San Vicente,Rural, 2633 
+097201038,Sicayab Bocana,Rural, 2195 
+097201039,Sigayan,Rural, 838 
+097201040,Silinog,Rural, 712 
+097201041,Sinonoc,Rural, 1492 
+097201042,Santo Niño,Rural, 1765 
+097201043,Sulangon,Rural, 2915 
+097201044,Tag-olo,Rural, 676 
+097201045,Taguilon,Rural, 3102 
+097201046,Kauswagan (Talisay),Rural, 1217 
+097201047,Tamion,Rural, 1005 
+097201048,Bagting (Pob.),Rural, 1202 
+097201049,Banonong (Pob.),Urban, 4138 
+097201050,Cawa-cawa (Pob.),Urban, 2373 
+097201051,Dawo (Pob.),Urban, 2465 
+097201052,Matagobtob Pob. (Talisay),Rural, 2634 
+097201053,Linabo (Pob.),Rural, 1441 
+097201054,Potol (Pob.),Rural, 1548 
+097201055,Santa Cruz (Pob.),Urban, 1597 

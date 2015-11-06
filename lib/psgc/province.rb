@@ -8,11 +8,11 @@ module PSGC
     end
 
     def cities
-      @@cities ||= load(cities_data, PSGC::City)
+      @cities ||= load(cities_data, PSGC::City) || []
     end
 
     def municipalities
-      @@municipalities ||= load(municipalities_data, PSGC::Municipality)
+      @municipalities ||= load(municipalities_data, PSGC::Municipality) || []
     end
 
     private
@@ -30,9 +30,11 @@ module PSGC
     end
 
     def load(csv_file, cls)
-      CSV.open(csv_file) do |csv|
-        csv.shift # skip header row
-        csv.read.map {|id, name| cls.new(id, name)}
+      if File.file?(csv_file)
+        CSV.open(csv_file) do |csv|
+          csv.shift # skip header row
+          csv.read.map {|id, name| cls.new(id, name)}
+        end
       end
     end
 

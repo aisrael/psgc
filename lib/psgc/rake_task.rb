@@ -31,19 +31,22 @@ module PSGC
 
         directory base_dir
 
-        desc "Fetch PSGC Web pages from www.ncsb.gov.ph"
+        desc 'Fetch PSGC Web pages from www.ncsb.gov.ph'
         task :import => base_dir do
           reg = PSGC::Import::ImportRegions.new
           reg.fetch
         end
 
-        desc "Compute md5 hashes of files under web/"
+        desc 'Compute md5 hashes of files under web/'
         task :hashes => base_dir do
           puts 'CHECKSUMS = {'
           puts Dir.entries(base_dir).map {|f|
-            unless File.directory?(f)
-              hash = Digest::MD5.file(File.join(base_dir, f)).hexdigest
-              "  '#{f}' => '#{hash}'"
+            unless f.start_with?('.')
+              p = File.join(base_dir, f)
+              if File.file?(p) && File.size(p) > 0
+                hash = Digest::MD5.file(File.join(base_dir, f)).hexdigest
+                "  '#{f}' => '#{hash}'"
+              end
             end
           }.compact.join(",\n")
           puts '}'

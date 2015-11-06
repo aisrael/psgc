@@ -52,4 +52,4 @@ pkg
 #*.rbc
 
 # WWW files
-web
+/web/

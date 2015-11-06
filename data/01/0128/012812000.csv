@@ -1,0 +1,81 @@
+id,name,urban_rural,population
+012812001,"Bgy. No. 42, Apaya",Rural,892 
+012812002,"Bgy. No. 36, Araniw",Rural,810 
+012812003,"Bgy. No. 56-A, Bacsil North",Rural,905 
+012812004,"Bgy. No. 56-B, Bacsil South",Rural,1251 
+012812005,"Bgy. No. 41, Balacad",Rural,1387 
+012812006,"Bgy. No. 40, Balatong",Rural,2638 
+012812007,"Bgy. No. 55-A, Barit-Pandan",Rural,2117 
+012812008,"Bgy. No. 47, Bengcag",Rural,1817 
+012812009,"Bgy. No. 50, Buttong",Rural,2734 
+012812010,"Bgy. No. 60-A, Caaoacan",Rural,1329 
+012812011,"Bry. No. 48-A, Cabungaan North",Rural,1719 
+012812012,"Bgy. No. 48-B, Cabungaan South",Rural,1226 
+012812013,"Bgy. No. 37, Calayab",Rural,1889 
+012812014,"Bgy. No. 54-B, Camangaan",Rural,920 
+012812015,"Bgy. No. 58, Casili",Rural,862 
+012812016,"Bgy. No. 61, Cataban",Rural,729 
+012812017,"Bgy. No. 43, Cavit",Rural,1051 
+012812019,"Bgy. No. 49-A, Darayday",Rural,741 
+012812020,"Bgy. No. 59-B, Dibua North",Rural,756 
+012812021,"Bgy. No. 59-A, Dibua South",Rural,1011 
+012812022,"Bgy. No. 34-B, Gabu Norte East",Rural,1177 
+012812023,"Bgy. No. 34-A, Gabu Norte West",Rural,773 
+012812024,"Bgy. No. 35, Gabu Sur",Rural,1692 
+012812026,Bgy. No. 32-C La Paz East,Rural,1521 
+012812027,"Bgy. No. 33-B, La Paz Proper",Rural,1030 
+012812028,"Bgy. No. 32-B, La Paz West",Rural,1031 
+012812029,"Bgy. No. 54-A, Lagui-Sail",Rural,2199 
+012812030,"Bgy. No. 32-A, La Paz East",Rural,1321 
+012812031,"Bgy. No. 33-A, La Paz Proper",Rural,841 
+012812032,"Bgy. No. 52-B, Lataag",Rural,848 
+012812033,"Bgy. No. 60-B, Madiladig",Rural,1489 
+012812034,"Bgy. No. 38-A, Mangato East",Rural,917 
+012812035,"Bgy. No. 38-B, Mangato West",Rural,1091 
+012812036,"Bgy. No. 62-A, Navotas North",Rural,808 
+012812037,"Bgy. No. 62-B, Navotas South",Rural,936 
+012812038,"Bgy. No. 46, Nalbo",Urban,2224 
+012812039,"Bgy. No. 51-A, Nangalisan East",Rural,1509 
+012812040,"Bgy. No. 51-B, Nangalisan West",Rural,706 
+012812041,"Bgy. No. 24, Nstra. Sra. De Consolacion (Pob.)",Urban,979 
+012812042,"Bgy. No. 7-A, Nstra. Sra. De Natividad (Pob.)",Urban,1085 
+012812043,"Bgy. No. 7-B, Nstra. Sra. De Natividad (Pob.)",Urban,961 
+012812044,"Bgy. No. 27, Nstra. Sra. De Soledad (Pob.)",Urban,1478 
+012812045,"Bgy. No. 13, Nstra. Sra. De Visitacion (Pob.)",Urban,1193 
+012812046,"Bgy. No. 3, Nstra. Sra. Del Rosario (Pob.)",Urban,1191 
+012812047,"Bgy. No. 57, Pila",Rural,1761 
+012812048,"Bgy. No. 49-B, Raraburan",Rural,1512 
+012812049,"Bgy. No. 53, Rioeng",Rural,1459 
+012812050,"Bgy. No. 55-B, Salet-Bulangon",Urban,2329 
+012812053,"Bgy. No. 6, San Agustin (Pob.)",Urban,1451 
+012812054,"Bgy. No. 22, San Andres (Pob.)",Urban,1170 
+012812055,"Bgy. No. 28, San Bernardo (Pob.)",Urban,1656 
+012812056,"Bgy. No. 17, San Francisco (Pob.)",Urban,671 
+012812057,"Bgy. No. 4, San Guillermo (Pob.)",Urban,1143 
+012812058,"Bgy. No. 15, San Guillermo (Pob.)",Urban,1036 
+012812059,"Bgy. No. 12, San Isidro (Pob.)",Urban,1603 
+012812060,"Bgy. No. 16, San Jacinto (Pob.)",Urban,1040 
+012812061,"Bgy. No. 10, San Jose (Pob.)",Urban,993 
+012812062,"Bgy. No. 1, San Lorenzo (Pob.)",Urban,4391 
+012812063,"Bgy. No. 26, San Marcelino (Pob.)",Urban,1067 
+012812064,"Bgy. No. 52-A, San Mateo",Rural,629 
+012812065,"Bgy. No. 23, San Matias (Pob.)",Urban,2295 
+012812066,"Bgy. No. 20, San Miguel (Pob.)",Urban,939 
+012812067,"Bgy. No. 21, San Pedro (Pob.)",Urban,1261 
+012812068,"Bgy. No. 5, San Pedro (Pob.)",Urban,1716 
+012812069,"Bry. No. 18, San Quirino (Pob.)",Urban,834 
+012812070,"Bgy. No. 8, San Vicente (Pob.)",Urban,1025 
+012812071,"Bgy. No. 9, Santa Angela (Pob.)",Urban,783 
+012812072,"Bgy. No. 11, Santa Balbina (Pob.)",Urban,1322 
+012812073,"Bgy. No. 25, Santa Cayetana (Pob.)",Urban,1094 
+012812074,"Bgy. No. 2, Santa Joaquina (Pob.)",Urban,2367 
+012812075,"Bgy. No. 19, Santa Marcela (Pob.)",Urban,1101 
+012812076,"Bgy. No. 30-B, Santa Maria",Rural,1260 
+012812077,"Bgy. No. 39, Santa Rosa",Rural,775 
+012812078,"Bgy. No. 14, Santo Tomas (Pob.)",Urban,1389 
+012812079,"Bgy. No. 29, Santo Tomas (Pob.)",Urban,1326 
+012812080,"Bgy. No. 30-A, Suyo",Rural,761 
+012812081,"Bgy. No. 31, Talingaan",Rural,1485 
+012812082,"Bgy. No. 45, Tangid",Rural,991 
+012812083,"Bgy. No. 55-C, Vira",Rural,1226 
+012812084,"Bgy. No. 44, Zamboanga",Rural,1259 
