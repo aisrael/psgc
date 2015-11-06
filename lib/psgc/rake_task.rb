@@ -1,5 +1,7 @@
 require 'fileutils'
 
+require 'json'
+
 require 'rake'
 require 'rake/tasklib'
 
@@ -39,17 +41,19 @@ module PSGC
 
         desc 'Compute md5 hashes of files under web/'
         task :hashes => base_dir do
-          puts 'CHECKSUMS = {'
-          puts Dir.entries(base_dir).map {|f|
+          mapped = Dir.entries(base_dir).map {|f|
             unless f.start_with?('.')
               p = File.join(base_dir, f)
               if File.file?(p) && File.size(p) > 0
                 hash = Digest::MD5.file(File.join(base_dir, f)).hexdigest
-                "  '#{f}' => '#{hash}'"
+                [f, hash]
               end
             end
-          }.compact.join(",\n")
-          puts '}'
+          }.compact
+          hashes = Hash[mapped]
+          File.open("#{base_dir}.CHECKSUMS", 'w') do |f|
+            f.write(hashes.to_json)
+          end
         end
       end
     end
