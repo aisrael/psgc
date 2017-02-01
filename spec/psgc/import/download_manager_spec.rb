@@ -43,11 +43,11 @@ describe PSGC::Import::DownloadManager do
     it 'should check if file exists' do
       PSGC::Import::DownloadManager::CHECKSUMS[src] = '55349b2c7e24a01cf5a37673ada5b0f1'
 
-      digest = mock('digest')
+      digest = double('digest')
       File.should_receive(:exists?).with(full_target).and_return(true)
       Digest::MD5.should_receive(:file).with(full_target).and_return(digest)
       digest.should_receive(:hexdigest).and_return('55349b2c7e24a01cf5a37673ada5b0f1')
-      subject.send(:already_there, src, full_target).should be_true
+      subject.send(:already_there, src, full_target).should be true
     end
   end
 

@@ -10,7 +10,7 @@ describe PSGC::Region do
 
   describe '.REGION_DATA' do
     it 'is a file' do
-      File.exists?(PSGC::Region::REGION_DATA).should be_true
+      File.exists?(PSGC::Region::REGION_DATA).should be true
     end
   end
 
@@ -25,12 +25,12 @@ describe PSGC::Region do
   it { should respond_to :code }
   it { should respond_to :name }
   it { should respond_to :provinces }
-  it { should have_at_least(1).provinces }
 
   describe '#provinces' do
     it 'is a collection of PSGC::Province or PSGC::District' do
       subject.provinces.should be_a Enumerable
       subject.provinces.first.should be_a_province_or_district
+      expect(subject.provinces.count).to be > 1
     end
   end
 end
