@@ -1,7 +1,7 @@
 id,name,urban_rural,population
 054101001,Ambolong,Urban,3778
 054101002,Amoroy,Rural,653
-054101003,Amutag,Rural,2020
+054101003,Amotag (Amutag),Rural,2020
 054101004,Bagauma,Urban,2412
 054101005,Balawing,Rural,599
 054101006,Balete,Rural,1438
@@ -24,7 +24,7 @@ id,name,urban_rural,population
 054101023,Mariposa,Rural,1242
 054101024,Mataba,Rural,2549
 054101025,Matalangtalang,Rural,1686
-054101026,Matangog,Rural,1492
+054101026,Matongog (Matangog),Rural,1492
 054101027,Nabongsoran,Rural,935
 054101028,Pangle,Rural,698
 054101029,Panique,Rural,5806

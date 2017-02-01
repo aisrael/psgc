@@ -9,7 +9,7 @@ module PSGC
 
       WEB_FOLDER = File.expand_path(File.join(%w(.. .. .. web)), __FILE__)
 
-      @uri = URI('http://www.nscb.gov.ph/activestats/psgc/')
+      @uri = URI('http://nap.psa.gov.ph/activestats/psgc/')
       @dir = File.join(WEB_FOLDER, @uri.host)
       class << self
         attr_accessor :dir
@@ -49,7 +49,8 @@ module PSGC
     # Responsible for fetching and caching pages
     class DownloadManager
 
-      CHECKSUMS = JSON.load(File.new("#{Base.dir}.CHECKSUMS"))
+      CHECKSUMS_JSON = "#{Base.dir}.CHECKSUMS"
+      CHECKSUMS = JSON.load(File.new(CHECKSUMS_JSON))
 
       class << self
 

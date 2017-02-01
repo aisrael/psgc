@@ -34,7 +34,7 @@ describe PSGC::Import::Base do
 
   describe '.dir' do
     subject { PSGC::Import::Base.dir }
-    it { should eq(File.expand_path(File.join(File.dirname(__FILE__), '..', '..', '..', 'web', 'www.nscb.gov.ph'))) }
+    it { should eq(File.expand_path(File.join(File.dirname(__FILE__), '..', '..', '..', 'web', 'nap.psa.gov.ph'))) }
   end
 
   it { should respond_to :src }
@@ -43,7 +43,7 @@ describe PSGC::Import::Base do
 
   describe '#target' do
     it 'should be \'Base.dir/src\'' do
-      task.send(:target).should eq(File.join(PSGC::Import::Base.dir, 'src'))
+      task.send(:target).should eq('src')
     end
   end
 
@@ -55,7 +55,7 @@ describe PSGC::Import::Base do
 
   describe '#fetch' do
     it 'should delegate to DownloadManager' do
-      PSGC::Import::DownloadManager.should_receive(:fetch).with('src')
+      PSGC::Import::DownloadManager.should_receive(:fetch).with('src', 'src')
       task.fetch
     end
   end
