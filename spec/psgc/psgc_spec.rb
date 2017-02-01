@@ -6,7 +6,7 @@ describe PSGC do
   end
   describe '.DATA_DIR' do
     it 'is a directory' do
-      File.directory?(PSGC::DATA_DIR).should be_true
+      File.directory?(PSGC::DATA_DIR).should be true
     end
   end
   describe '::Region' do

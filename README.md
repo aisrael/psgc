@@ -5,7 +5,7 @@ The Philippine Standard Geographic Code (PSGC) provides the standard code for ge
 that rationalizes and integrates different existing geographic codes being used by various government agencies.
 
 It is published and maintained by the National Statistics Coordination Board at:
-http://www.nscb.gov.ph/activestats/psgc/
+http://nap.psa.gov.ph/activestats/psgc/
 
 This Ruby gem provides the PSGC data as a Ruby class library. It can be used in Rails applications without requiring dedicated database tables.
 
@@ -44,4 +44,3 @@ For the provinces under Region I, see `data/1/provinces.csv`, and so on.
 ## Copyright
 
 Copyright (c) 2012 Alistair A. Israel. See LICENSE.txt for further details.
-

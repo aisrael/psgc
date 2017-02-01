@@ -7,10 +7,10 @@ source 'http://rubygems.org'
 # Include everything needed to run rake, tests, features, etc.
 group :development do
   gem 'json', '~> 1.8.3'
-  gem 'rspec', '~> 2.11'
+  gem 'rspec', '~> 3.5'
   gem 'rdoc', '~> 3.12'
   gem 'bundler', '~> 1.0'
-  gem 'jeweler', '~> 1.8.4'
+  gem 'jeweler', '~> 2.3.3'
 
   # rcov only works with Ruby 1.8
   gem 'rcov', '>= 0', :platforms => :mri_18
@@ -18,6 +18,5 @@ group :development do
   gem 'simplecov', :platforms => :mri_19
 
   # for scraping
-  gem 'nokogiri', '~> 1.5'
+  gem 'nokogiri', '~> 1.6'
 end
-
